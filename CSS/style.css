@@ -1,0 +1,27 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: black;
+    height: 70px;
+}
+
+.opciones_inicio {
+    display: inline;
+    align-items: center;
+    margin: 100px;
+}
+
+.opciones {
+    text-decoration: none;
+    color: #fff;
+}
+
+.opciones:hover {
+    color: #FF8B13;
+}

@@ -13,14 +13,37 @@
 </head>
 <body>
 
-    <header id="header">
-        <p class="h2 text-secondary-emphasis">Mi Ruta</p>
-        <ul>
-            <li class="opciones_inicio"><a href="" class="opciones">Buses</a></li>
-            <li class="opciones_inicio"><a href="" class="opciones">Paradas</a></li>
-            <li class="opciones_inicio"><a href="" class="opciones">Perfil</a></li>
-        </ul>
-    </header>
+    <!--NavBar navegacion pagina-->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary navbar bg-dark" data-bs-theme="dark">
+
+        <!--Contenedor Responsive Navegacion-->
+        <div class="container-fluid">
+
+          <!--Titulo Web-->
+          <a class="navbar-brand" href="index.html">Mi Ruta</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <!--Links Navegacion-->
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">  
+              <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+              </li>
+            </ul>
+          </div>        
+        </div>
+    </nav>
+
+    <!--Contenido Web-->
+    
     
     <!-- LINK JS -->
     <script src="JS/main.js"></script>

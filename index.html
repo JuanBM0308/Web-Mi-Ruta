@@ -16,47 +16,90 @@
     <!--NavBar navegacion pagina-->
     <nav class="navbar navbar-expand-lg bg-body-tertiary navbar bg-dark" data-bs-theme="dark">
 
-      <!--Contenedor Responsive Navegacion-->
-      <div class="container-fluid">
+        <!--Contenedor Responsive Navegacion-->
+        <div class="container-fluid">
 
-        <!--Titulo Web-->
-        <a class="navbar-brand" href="index.html">Mi Ruta</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+          <!--Titulo Web-->
+          <a class="navbar-brand" href="index.html">Mi Ruta</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
 
-        <!--Links Navegacion-->
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <div>
-              <ul class="navbar-nav">  
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Rutas</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Paradas</a>
-                  </li>
-                </ul>
-          </div>
-          <div class="dropdown-center" id="botonusuario">
-              <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  <img src="images/usuario.png" alt="iconousuario">
-              </button>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Nombre</a></li>
-                <li><a class="dropdown-item" href="#">Correo</a></li>
-                <li><a class="border-top dropdown-item" href="#"><img src="images/apagar.png" style="width: 18px;" alt="apagarsesion"> Cerrar Sesión</a></li>
-              </ul>
-            </div>
-        </div>        
-      </div>
-  </nav>
+          <!--Links Navegacion-->
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">  
+              <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+              </li>
+            </ul>
+          </div>        
+        </div>
+    </nav>
 
     <!--Contenido Web-->
-    <div class="container-fluid" id="mapa"></div>
+    
+    <div class="contenido">
+      <div class="buscador">
+        <ul id="scroll-container" class="sidenav-menu">
+          <div class="input-group rounded">
+            <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" style="margin-bottom: 2em;"/>
+          </div>
+          <div class="input-group rounded">
+            <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon"/>
+          </div>
+      </div>
 
+      <li class="sidenav-item">
+        <a class="sidenav-link">
+          <i class="far fa-smile pe-3"></i><span>Link 1</span>
+        </a>
+      </li>
+      <li class="sidenav-item">
+        <a class="sidenav-link">
+          <i class="far fa-smile pe-3"></i><span>Link 2</span>
+        </a>
+      </li>
+      <li class="sidenav-item">
+        <a class="sidenav-link">
+          <i class="far fa-smile pe-3"></i><span>Link 3</span>
+        </a>
+      </li>
+      <li class="sidenav-item">
+        <a class="sidenav-link">
+          <i class="far fa-smile pe-3"></i><span>Link 4</span>
+        </a>
+      </li>
+      <li class="sidenav-item">
+        <a class="sidenav-link">
+          <i class="far fa-smile pe-3"></i><span>Link 5</span>
+        </a>
+      </li>
+      <li class="sidenav-item">
+        <a class="sidenav-link">
+          <i class="far fa-smile pe-3"></i><span>Link 6</span>
+        </a>
+      </li>
+      <li class="sidenav-item">
+        <a class="sidenav-link">
+          <i class="far fa-smile pe-3"></i><span>Link 7</span>
+        </a>
+      </li>
+      <li class="sidenav-item">
+        <a class="sidenav-link">
+          <i class="far fa-smile pe-3"></i><span>Link 8</span>
+        </a>
+      </li>
+    </ul>
+    </div>
+    
     <!-- LINK JS -->
     <script src="JS/main.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDaeWicvigtP9xPv919E-RNoxfvC-Hqik&callback=iniciarMapa"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
     <!-- FIN LINK JS -->
 </body>

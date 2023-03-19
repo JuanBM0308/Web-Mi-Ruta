@@ -27,11 +27,6 @@
     margin-bottom: 1em;
 }
 
-.lugares {
-    width: 300px;
-    border-style: solid;
-}
-
 li {
     list-style: none;
     padding: 15px;
@@ -40,4 +35,8 @@ li {
 .sidenav-link {
     text-decoration: none;
     color: black;
+}
+
+#botonDesplegableBuscador {
+    background-color: #ff9933;
 }

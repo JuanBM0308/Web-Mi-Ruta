@@ -5,7 +5,7 @@ var map = L.map('map', {
 
 var marker = L.marker([4.70612, -74.2307],
     {alt: 'Mosquera'}).addTo(map)
-    .bindPopup('Esto es Mosuqera - Cundinamarca!');
+    .bindPopup('Esto es Mosquera - Cundinamarca!');
 
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,

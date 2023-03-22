@@ -1,11 +1,13 @@
-function iniciarMapa(){
-    var coord = {lat:4.7109346 ,lng: -74.2257983}
-    var map = new google.maps.Map(document.getElementById('mapa'), {
-        zoom: 10,
-        center: coord
-    });
-    var marker = new google.maps.Marker({
-        position: coord,
-        map: map
-      });
-}
+var map = L.map('map', {
+    center: [4.70612, -74.2307],
+    zoom: 13
+});
+
+var marker = L.marker([4.70612, -74.2307],
+    {alt: 'Mosquera'}).addTo(map)
+    .bindPopup('Esto es Mosuqera - Cundinamarca!');
+
+L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+}).addTo(map);

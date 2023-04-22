@@ -71,10 +71,21 @@
             <div class="buscador">
               <ul id="scroll-container" class="sidenav-menu">
                 <div class="input-group rounded">
-                  <input type="search" class="form-control rounded" placeholder="Lugar Inicio 🚩" aria-label="Search" aria-describedby="search-addon" style="margin-bottom: 2em;"/>
+                  <select id="lugar_inicio" class="form-select" aria-label="Default select example" style="margin-bottom: 2em;">
+                    <option disabled selected>Lugar Inicio 🚩</option>
+                    <option value="4.7121273,-74.2215775">Ecoplaza Centro Comercial</option>
+                    <option value="4.7109645,-74.2227103">Centro Comercial El Trébol</option>
+                    <option value="4.7133231,-74.218804">Mercado Zapatoca Mosquera</option>
+                  </select>
                 </div>
                 <div class="input-group rounded">
-                  <input type="search" class="form-control rounded" placeholder="Lugar Fin 🏁" aria-label="Search" aria-describedby="search-addon"/>
+                  <select id="lugar_fin" class="form-select" aria-label="Default select example" style="margin-bottom: 2em;">
+                    <option disabled selected>Lugar Fin 🏁</option>
+                    <option value="4.7133231,-74.218804">Mercado Zapatoca Mosquera</option>
+                    <option value="4.7121273,-74.2215775">Ecoplaza Centro Comercial</option>
+                    <option value="4.7109645,-74.2227103">Centro Comercial El Trébol</option>
+                    
+                  </select>
                 </div>
             </div>
       

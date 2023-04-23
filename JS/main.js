@@ -27,18 +27,20 @@ document.getElementById('lugar_fin').addEventListener('change',function(e){
 
 // TRAZAR COORDENADAS CON POLILINEA
 document.getElementById('lugar_inicio').addEventListener('change',function(e){
-    let coords = e.target.value.split(","); 
+    let coords_ini = e.target.value.split(","); 
+    console.log("INICIO ",coords_ini)
+
+    document.getElementById('lugar_fin').addEventListener('change',function(e){
+        let coords_fin = e.target.value.split(",");
+        console.log("FIN ",coords_fin)
+
+        var coord_camino = [
+            coords_ini,
+            coords_fin
+        ];
+        
+        var camino = L.polyline(coord_camino, {
+            color: '#3990ff'
+        }).addTo(map);
+    });
 });
-
-document.getElementById('lugar_fin').addEventListener('change',function(e){
-    let coords = e.target.value.split(",");
-});
-
-var coord_camino = [
-    coord_ini,
-    coord_fin
-];
-
-var camino = L.polyline(coord_camino, {
-    color: '#3990ff'
-}).addTo(map);

@@ -41,32 +41,37 @@
         </div>
       </nav>
 
-      <!--Formulario Ingreso-->
+      <!--Formulario Registro-->
 
-      <form action="">
+      <form id="form_resgistro" action="">
 
-        <h2 class="Titulo">Inicio Sesión</h2>
+        <h2 class="Titulo">Registro Usuario</h2>
 
         <img src="images/Firmas (1).png" class="logo" alt="" srcset="">
 
         <div class="datos">
           <div class="contenido">
-            <label for="dato8">Usuario</label>
-            <input type="text" placeholder="Digite su usuario" required id="usuario_ing">
+            <label for="Nombre_Completo">Nombre Completo</label>
+            <input type="text" placeholder="Digite su nombre completo" required id="nombre_completo_usu">
           </div>
 
           <div class="contenido">
-            <label for="dato9">Contraseña</label>
-            <input type="password" placeholder="Digite su Contraseña" required id="contraseña_ing">
+            <label for="Correo">Correo</label>
+            <input type="email" placeholder="Digite su correo" required id="correo_usu">
+          </div>
+
+          <div class="contenido">
+            <label for="Contraseña">Contraseña</label>
+            <input type="password" placeholder="Digite su contraseña" required id="contraseña_usu">
           </div>
         </div>
 
         <div class="Cajaboton">
-            <button type="button" class="boton1" value="actualizar" name="Registrar" id="actualizar">Ingresar</button>
+            <button type="button" class="boton1" value="" name="registrar" id="boton_registrar">Registrar</button>
         </div>
 
         <div class="Cajaboton">
-            <button type="button" class="boton2" value="actualizar" name="Registrar" id="actualizar"> <a><img src="images/search.png" class="icono" alt="" srcset=""></a> Inicia Sesión</button>
+            <button type="button" class="boton2" value="" name="registro_google" id="boton_regis_google"> <a><img src="images/search.png" class="icono" alt="" srcset=""></a> Registro con Google</button>
         </div>
     </form>
     </form>

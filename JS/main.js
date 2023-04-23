@@ -27,11 +27,8 @@ document.getElementById('lugar_fin').addEventListener('change',function(e){
 
 // TRAZAR COORDENADAS CON POLILINEA
 document.getElementById('lugar_inicio').addEventListener('change',function(e){
-    let coords = e.target.value.split(",");
-    
+    let coords = e.target.value.split(","); 
 });
-
-console.log(lpo)
 
 document.getElementById('lugar_fin').addEventListener('change',function(e){
     let coords = e.target.value.split(",");

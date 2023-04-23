@@ -112,3 +112,15 @@ input:hover {
     width: 24px;
     margin: 5px;
 }
+
+#form_resgistro {
+    background-color: #ff9933;
+    width: 330px;
+    height: 650px;
+    border-radius: 7px;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}

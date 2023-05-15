@@ -40,6 +40,9 @@
                     <a class="nav-link" href="paradas.html">Paradas</a>
                   </li>
                   <li class="nav-item">
+                    <a class="nav-link" href="favoritos.html">Favoritos</a>
+                  </li>
+                  <li class="nav-item">
                     <a id="botonDesplegableBuscador" class="btn collapsed z-3 position-absolute p-2 rounded-3 position-absolute top-1 start-50 translate-middle-x" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWidthExample" aria-expanded="false" aria-controls="collapseWidthExample">
                       Desplegar Buscador
                     </a>
@@ -79,14 +82,22 @@
                   </select>
                 </div>
                 <div class="input-group rounded">
-                  <select id="lugar_fin" class="form-select" aria-label="Default select example" style="margin-bottom: 2em;">
+                  <select id="lugar_fin" class="form-select" aria-label="Default select example" style="margin-bottom: 1em;">
                     <option disabled selected>Lugar Fin 🏁</option>
                     <option value="4.7133231,-74.218804">Mercado Zapatoca Mosquera</option>
                     <option value="4.7121273,-74.2215775">Ecoplaza Centro Comercial</option>
-                    <option value="4.7109645,-74.2227103">Centro Comercial El Trébol</option>
-                    
+                    <option value="4.7109645,-74.2227103">Centro Comercial El Trébol</option>          
                   </select>
                 </div>
+                <div class="centrar-algo">
+                  <button type="button" class="btn btn-danger rounded" id="favoritos">
+                    <i class="bi bi-heart-fill"></i>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16">
+                      <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
+                    </svg>
+                  </button>
+                </div>
+              </ul>
             </div>
       
             <div class="kugares">

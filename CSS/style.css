@@ -40,3 +40,12 @@ li {
 .centrar-algo {
     text-align: center;
 }
+
+#contenedor_admin {
+    margin: 20px;
+}
+
+.contenedor_ajustes {
+    margin: 10px;
+    text-align: center;
+}

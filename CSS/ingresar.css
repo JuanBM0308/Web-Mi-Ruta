@@ -10,10 +10,10 @@ body {
     align-items: center;
 }
 
-form {
+.formularios_ing_regi {
     background-color: #ff9933;
     width: 330px;
-    height: 570px;
+    height: auto;
     border-radius: 7px;
     margin-top: 2em;
     margin-bottom: 2em;

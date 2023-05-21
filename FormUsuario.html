@@ -6,14 +6,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" href="images/planeta.png" type="image/x-icon">
         <!-- LINK CSS -->
-        <link rel="stylesheet" href="CSS/ingresar.css">
+        <link rel="stylesheet" href="CSS/formulario.css">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
         <!-- FIN LINK CSS -->
         <!--CSS JS Mapa-->
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
         <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
         <!--FIN CSS JS Mapa-->
-        <title>Mi Ruta | Rutas</title>
+        <title>Mi Ruta | Ingreso</title>
     </head>
 <body>
     
@@ -24,9 +24,6 @@
   
           <!--Titulo Web-->
           <a class="navbar-brand" href="index.html">Mi Ruta</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
   
           <!--Links Navegacion-->
           <div class="collapse navbar-collapse" id="navbarNav">
@@ -46,30 +43,42 @@
 
       <!--Formulario Ingreso-->
 
-      <form action="">
+      <div class="formularios_ing_regi">
 
-        <h2 class="Titulo">Inicio Sesión</h2>
-
-        <img src="images/Firmas (1).png" class="logo" alt="" srcset="">
+        <img src="images/agregar-usuario (1).png" class="agregar" alt="" srcset="">
 
         <div class="datos">
           <div class="contenido">
-            <label for="dato8">Usuario</label>
-            <input type="text" placeholder="Digite su Usuario" required id="nombreA">
+            <label for="dato8">Correo</label>
+            <input type="email" placeholder="Digite el Correo" required id="correoUsu">
           </div>
 
           <div class="contenido">
             <label for="dato9">Contraseña</label>
-            <input type="text" placeholder="*********" required id="apellidoA">
+            <input type="password" placeholder="Digite el Contraseña" required id="contraseñaUsu">
           </div>
+
+          <div class="contenido">
+            <label for="dato9">Nombre</label>
+            <input type="text" placeholder="Digite el Nombre" required id="contraseñaUsu">
+          </div>
+
+          <div class="contenido">
+            <label for="dato9">Rol</label>
+            <input type="number" placeholder="Digite el Rol" required id="RolUsu">
+          </div>
+
         </div>
 
         <div class="Cajaboton">
-            <button type="button" class="boton1" value="actualizar" name="Registrar" id="actualizar">Ingresar</button>
+            <button class="boton1" value="ingresar" name="ingresar" id="ingresar" onclick="envio()">Agregar</button>
         </div>
 
-        <div class="Cajaboton">
-            <button type="button" class="boton2" value="actualizar" name="Registrar" id="actualizar"> <a><img src="images/search.png" class="icono" alt="" srcset=""></a> Inicia Sesión</button>
-        </div>
-    </form>
-      </form>
+      </div>
+
+    <!-- LINK JS -->
+    <script src="JS/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <!-- FIN LINK JS -->
+  </body>
+</html>

@@ -28,8 +28,9 @@ body {
     color: #ffffff;
 }
 
-.logo {
-    width: 150px;
+.agregar {
+    width: 80px;
+    margin: 2em;
 }
 
 .datos{

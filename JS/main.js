@@ -46,14 +46,4 @@ document.getElementById('lugar_inicio').addEventListener('change',function(e){
 });
 
 // PARTE LOGICA HTML
-function envio() {
-    var usu_ing = document.getElementById('usuario_ing').value
-    var pass_ing = document.getElementById('contraseña_ing').value
 
-    if (usu_ing == 'Juan.Barbosa@miruta.com' && pass_ing == "12345") {
-        alert("Bienvenido al sistema")
-        window.location = "administrador.html"
-    } else {
-        alert("Usuario o contraseña incorrectos")
-    }
-}

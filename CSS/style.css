@@ -49,3 +49,10 @@ li {
     margin: 10px;
     text-align: center;
 }
+
+#contenedorCardsRutas {
+    display: flex;  
+    flex-wrap: wrap;
+    margin: 10px;
+    justify-content: center;
+}

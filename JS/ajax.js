@@ -3,14 +3,27 @@ $(document).ready(function(){
     let contenedorCardsRutas = document.querySelector('#contenedorCardsRutas')
     contenedorCardsRutas.innerHTML = ''
     $.ajax({
-        url: "http://localhost:8080/ListarParada",
+        url: "http://localhost:8080/Parada/ListarParada",
         type: "GET",
         datatype: "JSON",
         success:function(respuesta){
             for (i = 0; i <= respuesta.length; i++){
-                contenedorCardsRutas.innerHTML += '<div style="margin: 5px;" class="col-lg-3 col-md-6 mb-3"> <div class="card card-cascade"> <!-- Parada imagen --> <div class="view view-cascade overlay"> <img style="height: 200px;" class="card-img-top" src="'+respuesta[i].imgParada+'"> </div> <!-- Parada contenido --> <div class="card-body card-body-cascade text-center"> <!-- Titulo Parada --> <h4 class="card-title"><strong>'+respuesta[i].nombrePara+'</strong></h4> <!-- Direccion --> <h6 class="font-weight-bold indigo-text py-2">'+respuesta[i].direccionPara+'</h6> <button id="boton_ver'+respuesta[i].idParadas+'" value="'+respuesta[i].longitud+","+respuesta[i].latitud+'" type="button" class="btn btn-warning" onclick="ver_parada_mapa()">Ver!</button> </div> </div> </div>'
+                contenedorCardsRutas.innerHTML += '<div style="margin: 5px;" class="col-lg-3 col-md-6 mb-3"> <div class="card card-cascade"> <!-- Parada imagen --> <div class="view view-cascade overlay"> <img style="height: 200px;" class="card-img-top" src="'+respuesta[i].imgParada+'"> </div> <!-- Parada contenido --> <div class="card-body card-body-cascade text-center"> <!-- Titulo Parada --> <h4 class="card-title"><strong>'+respuesta[i].nombrePara+'</strong></h4> <!-- Direccion --> <h6 class="font-weight-bold indigo-text py-2">'+respuesta[i].direccionPara+'</h6></div> </div> </div>'
             }
         }  
+    });
+
+    $('#eliminarParada').on('click', function(){
+        let eliminar_parada = $('#idParadaEli').val();
+        console.log(eliminar_parada)
+        $.ajax({
+            url: "http://localhost:8080/Parada/EliminarParada/"+eliminar_parada,
+            type: "DELETE",
+            datatype: "JSON",
+            success: function(respuesta) {
+                alert(respuesta)
+            }
+        })
     });
 
 });

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="images/planeta.png" type="image/x-icon">
+    <link rel="shortcut icon" href="images/BusFinal.png" type="image/x-icon">
     <!-- LINK CSS -->
     <link rel="stylesheet" href="CSS/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
@@ -96,8 +96,7 @@
                     <option disabled selected>Lugar Fin 🏁</option>
                     <option value="4.7133231,-74.218804">Mercado Zapatoca Mosquera</option>
                     <option value="4.7121273,-74.2215775">Ecoplaza Centro Comercial</option>
-                    <option value="4.7109645,-74.2227103">Centro Comercial El Trébol</option>
-                    
+                    <option value="4.7109645,-74.2227103">Centro Comercial El Trébol</option>    
                   </select>
                 </div>
                 <div class="centrar-algo">
@@ -107,6 +106,16 @@
                             <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
                         </svg>
                     </button>
+                </div>
+                <div id="buscardorParada">
+                  <div style="height: 1px; background-color: #ff9933; margin: 10px;"></div>
+                  <div class="input-group rounded">
+                    <select id="ver_paradas"  class="form-select" aria-label="Default select example" style="margin-bottom: 2em;" onchange="ver_parada_mapa()">
+                      <option disabled selected>Buscar Paradas 🔍</option>
+                      <option value="4.73918,-74.2782">Madrid - Prosperidad</option>
+                      <option value="4.73018,-74.2595">Madrid - María Jose Parrilla</option>
+                    </select>
+                  </div>
                 </div>
             </div>
       

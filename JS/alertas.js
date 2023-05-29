@@ -70,9 +70,16 @@ function ver_parada_mapa() {
       
     Toast.fire({
         icon: 'info',
-        title: 'Redireccionando al mapa! 🌍'
+        title: 'Preparando el mapa! 🌍'
     })
+}
 
-    //Redirección a idex.html ('mapa')
-    setTimeout( function() { window.location = "index.html"; }, 3200 );
+//Eliminar Parada
+function eliminar_parada() {
+    Swal.fire({
+        title: 'Eliminada!',
+        text: 'Se elimino la parada 😴',
+        icon: 'success',
+        confirmButtonText: 'Ok!'
+    })
 }

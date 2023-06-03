@@ -75,11 +75,11 @@ function ver_parada_mapa() {
 }
 
 //Eliminar Parada
-function eliminar_parada() {
+/* function eliminar_parada() {
     Swal.fire({
         title: 'Eliminada!',
         text: 'Se elimino la parada 😴',
         icon: 'success',
         confirmButtonText: 'Ok!'
     })
-}
+} */

@@ -48,4 +48,25 @@ $(document).ready(function(){
         });
     });
 
+
+    $('#eliminarRuta').on('click', function(){
+        let eliminar_ruta = $('#idRutaEli').val();
+        console.log(eliminar_ruta)
+        $.ajax({
+            url: "http://localhost:8080/Ruta/EliminarRuta/"+parseInt(eliminar_ruta),
+            type: "DELETE",
+            datatype: "JSON",
+            success: function eliminar_ruta(respuesta) {
+                if (respuesta){
+                    Swal.fire({
+                        title: 'Eliminada!',
+                        text: 'Se elimino la ruta 🗺',
+                        icon: 'success',
+                        confirmButtonText: 'Ok!'
+                    })
+                }
+            }
+        })
+    });
+
 });

@@ -69,4 +69,32 @@ $(document).ready(function(){
         })
     });
 
+
+    $('#agregarRuta').on('click', function(){
+        let datos = {
+            LugarInicio: $('#LugarInicio').val(),
+            LugarFinal: $('#LugarFinal').val(),
+            HI: $('#HI').val(),
+            HF: $('#HF').val(),
+        }
+        let datosEnvio = JSON.stringify(datos)
+        $.ajax({
+            url: "http://localhost:8080/Ruta/AgregarRuta",
+            type: "POST",
+            data: datosEnvio,
+            contentType: "application/JSON",
+            datatype: "JSON",
+            success:function agregar_ruta(respuesta){
+                if (respuesta){
+                    Swal.fire({
+                        title: 'Agregada!',
+                        text: 'Se agrego la ruta ⭐',
+                        icon: 'success',
+                        confirmButtonText: 'Ok!'
+                    })
+                }
+            }
+        });
+    });
+
 });

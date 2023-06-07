@@ -5,5 +5,96 @@
         "lugarFinal": "Montanel",
         "horaInicio": "04:20:00",
         "horaFinal": "08:50:00"
+    },
+    {
+        "idRuta": 2,
+        "lugarInicio": "Las palmas",
+        "lugarFinal": "Rubí",
+        "horaInicio": "04:20:00",
+        "horaFinal": "08:50:00"
+    },
+    {
+        "idRuta": 3,
+        "lugarInicio": "Las palmas",
+        "lugarFinal": "Porvenir Río",
+        "horaInicio": "04:20:00",
+        "horaFinal": "08:50:00"
+    },
+    {
+        "idRuta": 4,
+        "lugarInicio": "Montanel",
+        "lugarFinal": "Parcelas",
+        "horaInicio": "04:20:00",
+        "horaFinal": "08:50:00"
+    },
+    {
+        "idRuta": 6,
+        "lugarInicio": "Montanel",
+        "lugarFinal": "Planadas",
+        "horaInicio": "04:20:00",
+        "horaFinal": "08:50:00"
+    },
+    {
+        "idRuta": 7,
+        "lugarInicio": "Rubí",
+        "lugarFinal": "Charquito",
+        "horaInicio": "04:30:00",
+        "horaFinal": "08:00:00"
+    },
+    {
+        "idRuta": 8,
+        "lugarInicio": "Rubí",
+        "lugarFinal": "Porvenir Río",
+        "horaInicio": "04:30:00",
+        "horaFinal": "08:00:00"
+    },
+    {
+        "idRuta": 9,
+        "lugarInicio": "Las palmas",
+        "lugarFinal": "Montanel",
+        "horaInicio": "04:20:00",
+        "horaFinal": "08:50:00"
+    },
+    {
+        "idRuta": 10,
+        "lugarInicio": "Las palmas",
+        "lugarFinal": "Montanel",
+        "horaInicio": "04:20:00",
+        "horaFinal": "08:50:00"
+    },
+    {
+        "idRuta": 11,
+        "lugarInicio": "Centro comercial el trebol",
+        "lugarFinal": "Alcaldía de Mosquera",
+        "horaInicio": "04:20:00",
+        "horaFinal": "08:50:00"
+    },
+    {
+        "idRuta": 12,
+        "lugarInicio": "Alcaldía de Mosquera",
+        "lugarFinal": "Alcaldía de Mosquera",
+        "horaInicio": "04:20:00",
+        "horaFinal": "08:50:00"
+    },
+    {
+        "idRuta": 13,
+        "lugarInicio": "Sub Estacion Mosquera",
+        "lugarFinal": "Instituto roberto velandia",
+        "horaInicio": "04:20:00",
+        "horaFinal": "08:50:00"
+    },
+    {
+        "idRuta": 14,
+        "lugarInicio": "ECOPLAZA",
+        "lugarFinal": "Centro comercial el trebol",
+        "horaInicio": "04:20:00",
+        "horaFinal": "08:50:00"
+    },
+    {
+        "idRuta": 15,
+        "lugarInicio": "Sub Estacion Mosquera",
+        "lugarFinal": "Instituto roberto velandia",
+        "horaInicio": "04:20:00",
+        "horaFinal": "08:50:00"
     }
 ]

@@ -50,7 +50,7 @@ li {
     text-align: center;
 }
 
-#contenedorCardsRutas {
+#contenedorCardsParadas {
     display: flex;  
     flex-wrap: wrap;
     margin: 10px;

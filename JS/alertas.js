@@ -24,6 +24,11 @@ function envio() {
     var usu_ing = document.getElementById('usuario_ing').value
     var pass_ing = document.getElementById('contraseña_ing').value
 
+    //Guardado usuarios
+    let usuarios = new Map()
+    usuarios.set('Juan.Barbosa@miruta.com', '12345')
+    usuarios.set('Johan.Lopez@miruta.com', '0000')
+
     if (usu_ing == 'Juan.Barbosa@miruta.com' && pass_ing == "12345") {
         const Toast = Swal.mixin({
             toast: true,
@@ -73,13 +78,3 @@ function ver_parada_mapa() {
         title: 'Preparando el mapa! 🌍'
     })
 }
-
-//Eliminar Parada
-/* function eliminar_parada() {
-    Swal.fire({
-        title: 'Eliminada!',
-        text: 'Se elimino la parada 😴',
-        icon: 'success',
-        confirmButtonText: 'Ok!'
-    })
-} */

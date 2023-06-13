@@ -1,0 +1,11 @@
+[
+    {
+        "idUsu": 1,
+        "correoUsu": "arturo@gmail.com",
+        "contraseniaUsu": "contraseña1",
+        "nombreUsu": "ArturoUsu",
+        "fotoUsu": "https://cdn-icons-png.flaticon.com/128/701/701993.png",
+        "tipoUsuario": 1,
+        "usuarioHasRuta": []
+    }
+]

@@ -20,8 +20,8 @@ function eli_favoritos() {
 }
 
 //Login Temporal 
-function envio() {
-    var usu_ing = document.getElementById('usuario_ing').value
+/* function ingresar() {
+    var usu_ing = document.getElementById('correo_ing').value
     var pass_ing = document.getElementById('contraseña_ing').value
 
     //Guardado usuarios
@@ -57,7 +57,7 @@ function envio() {
             confirmButtonText: 'Ok!'
         })
     }
-}
+} */
 
 //Ver parada mapa
 function ver_parada_mapa() {

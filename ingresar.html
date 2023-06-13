@@ -19,6 +19,10 @@
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
         <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
         <!--FIN CSS JS Mapa-->
+
+        <!--AJAX-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <!--FIN AJAX-->
         <title>Mi Ruta | Ingreso</title>
     </head>
 <body>
@@ -53,26 +57,26 @@
 
         <h2 class="Titulo">Inicio Sesión</h2>
 
-        <img src="images/Firmas (1).png" class="logo" alt="" srcset="">
+        <img src="images/BusFinal.png" class="logo" alt="" srcset="">
 
         <div class="datos">
           <div class="contenido">
-            <label for="dato8">Usuario</label>
-            <input type="text" placeholder="Digite su usuario" required id="usuario_ing">
-          </div>
+            <label for="dato8">Correo</label>
+            <input type="text" placeholder="Digite su correo" required id="correo_ing">
+        </div>
 
-          <div class="contenido">
+        <div class="contenido">
             <label for="dato9">Contraseña</label>
             <input type="password" placeholder="Digite su Contraseña" required id="contraseña_ing">
           </div>
         </div>
 
         <div class="Cajaboton">
-            <button class="boton1" value="ingresar" name="ingresar" id="ingresar" onclick="envio()">Ingresar</button>
+          <button type="button" class="boton1" value="ingresar" name="ingresar" id="ingreso_usu" onclick="ingresar()">Ingresar</button>
         </div>
 
         <div class="Cajaboton">
-            <button type="button" class="boton2" value="actualizar" name="Registrar" id="actualizar"> <a><img src="images/search.png" class="icono" alt="" srcset=""></a> Inicia Sesión</button>
+            <button type="button" class="boton2" value="actualizar" name="Registrar" id="actualizar"> <a><img src="images/search.png" class="icono" alt="" srcset=""></a>Inicia Sesión</button>
         </div>
       </div>
 
@@ -82,6 +86,7 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> <!--Libreria Alerts-->
     <script src="JS/alertas.js"></script> <!--Manejo Alertas-->
     <script src="sweetalert2.all.min.js"></script> <!--Importar todas las herramientas-->
+    <script src="JS/ajax.js"></script> <!--Manejo AJAX-->
     <!-- FIN LINK JS -->
   </body>
 </html>

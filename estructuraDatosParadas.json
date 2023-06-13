@@ -1,10 +1,11 @@
 [
     {
-        "idParadas": 1,
-        "nombrePara": "PROSPERIDAD",
-        "direccionPara": "Ciudadela La Prosperidad Cl 7 Madrid Cundinamarca",
-        "longitud": -74.2782,
-        "latitud": 4.73918,
-        "imgParada": "https://lh5.googleusercontent.com/p/AF1QipO1egW9Vd6HGQD6bE5wdBski-vi9LYDqMRiKALM=w475-h240-k-no"
+        "idPar": 1,
+        "nombrePar": "PROSPERIDAD",
+        "direccionPar": "Ciudadela La Prosperidad Cl 7 Madrid Cundinamarca",
+        "longitudPar": -74.278175,
+        "latitudPar": 4.739177,
+        "imgPar": "https://lh5.googleusercontent.com/p/AF1QipO1egW9Vd6HGQD6bE5wdBski-vi9LYDqMRiKALM=w475-h240-k-no",
+        "paradaHasRuta": []
     }
 ]

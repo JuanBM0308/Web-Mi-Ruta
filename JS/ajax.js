@@ -4,7 +4,7 @@ $(document).ready(function(){
         let eliminar_parada = $('#idParadaEli').val();
         console.log(eliminar_parada)
         $.ajax({
-            url: "http://localhost:8080/Parada/EliminarParada/"+parseInt(eliminar_parada),
+            url: "http://localhost:8080/parada/eliminar/"+parseInt(eliminar_parada),
             type: "DELETE",
             datatype: "JSON",
             success: function eliminar_parada(respuesta) {
@@ -22,15 +22,17 @@ $(document).ready(function(){
 
     $('#agregarParada').on('click', function(){
         let datos = {
-            nombrePara: $('#nombreParada').val(),
-            direccionPara: $('#direcParada').val(),
-            latitud: $('#latiParada').val(),
-            longitud: $('#longiParada').val(),
-            imgParada: $('#imgParada').val()
+            idPar:0,
+            nombrePar: $('#nombreParada').val(),
+            direccionPar: $('#direcParada').val(),
+            latitudPar: $('#latiParada').val(),
+            longitudPar: $('#longiParada').val(),
+            imgPar: $('#imgParada').val()
         }
         let datosEnvio = JSON.stringify(datos)
+        console.log(datosEnvio)
         $.ajax({
-            url: "http://localhost:8080/Parada/AgregarParada",
+            url: "http://localhost:8080/parada/agregar",
             type: "POST",
             data: datosEnvio,
             contentType: "application/JSON",
@@ -53,7 +55,7 @@ $(document).ready(function(){
         let eliminar_ruta = $('#idRutaEli').val();
         console.log(eliminar_ruta)
         $.ajax({
-            url: "http://localhost:8080/Ruta/EliminarRuta/"+parseInt(eliminar_ruta),
+            url: "http://localhost:8080/ruta/eliminar/"+parseInt(eliminar_ruta),
             type: "DELETE",
             datatype: "JSON",
             success: function eliminar_ruta(respuesta) {
@@ -72,14 +74,17 @@ $(document).ready(function(){
 
     $('#agregarRuta').on('click', function(){
         let datos = {
-            LugarInicio: $('#LugarInicio').val(),
-            LugarFinal: $('#LugarFinal').val(),
-            HI: $('#HI').val(),
-            HF: $('#HF').val(),
+            idRut: 0,
+            lugarInicioRut: $('#LugarInicio').val(),
+            lugarDestinoRut: $('#LugarFinal').val(),
+            horaInicioRut: $('#HI').val(),
+            horaFinalRut: $('#HF').val(),
+            diasDisponiblesRut: $('#diasDisponibles').val()
         }
         let datosEnvio = JSON.stringify(datos)
+        console.log(datosEnvio)
         $.ajax({
-            url: "http://localhost:8080/Ruta/AgregarRuta",
+            url: "http://localhost:8080/ruta/guardar",
             type: "POST",
             data: datosEnvio,
             contentType: "application/JSON",
@@ -92,6 +97,54 @@ $(document).ready(function(){
                         icon: 'success',
                         confirmButtonText: 'Ok!'
                     })
+                }
+            }
+        });
+    });
+
+    $('#ingreso_usu').on('click', function(){
+        let datos = {
+            correoUsu: $('#correo_ing').val(),
+            contraseniaUsu: $('#contraseña_ing').val()
+        }
+        let datosEnvio = JSON.stringify(datos)
+        console.log(datosEnvio)
+        $.ajax({
+            url: "http://localhost:8080/usuario/login",
+            type: "POST",
+            data: datosEnvio,
+            contentType: "application/JSON",
+            datatype: "JSON",
+            success:function ingresar(respuesta){
+                //let coco = JSON.stringify(respuesta)
+                //console.log(coco)
+                if (respuesta == "{\n\"acceso\": false\n}"){
+                    Swal.fire({
+                        title: 'Denegado!',
+                        text: 'Usuario no encontrado 😓',
+                        icon: 'error',
+                        confirmButtonText: 'Ok!'
+                    })
+                } else {
+                    const Toast = Swal.mixin({
+                        toast: true,
+                        position: 'top-end',
+                        showConfirmButton: false,
+                        timer: 3000,
+                        timerProgressBar: true,
+                        didOpen: (toast) => {
+                          toast.addEventListener('mouseenter', Swal.stopTimer)
+                          toast.addEventListener('mouseleave', Swal.resumeTimer)
+                        }
+                    })
+                      
+                    Toast.fire({
+                        icon: 'success',
+                        title: 'Bienvenido al sistema'
+                    })
+            
+                    //Redirección a admin.html
+                    setTimeout( function() { window.location = "administrador.html"; }, 3200 );
                 }
             }
         });

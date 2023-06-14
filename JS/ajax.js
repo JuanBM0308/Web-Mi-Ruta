@@ -108,7 +108,7 @@ $(document).ready(function(){
             contraseniaUsu: $('#contraseña_ing').val()
         }
         let datosEnvio = JSON.stringify(datos)
-        console.log(datosEnvio)
+        //console.log(datosEnvio)
         $.ajax({
             url: "http://localhost:8080/usuario/login",
             type: "POST",

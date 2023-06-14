@@ -126,25 +126,47 @@ $(document).ready(function(){
                         confirmButtonText: 'Ok!'
                     })
                 } else {
-                    const Toast = Swal.mixin({
-                        toast: true,
-                        position: 'top-end',
-                        showConfirmButton: false,
-                        timer: 3000,
-                        timerProgressBar: true,
-                        didOpen: (toast) => {
-                          toast.addEventListener('mouseenter', Swal.stopTimer)
-                          toast.addEventListener('mouseleave', Swal.resumeTimer)
-                        }
-                    })
-                      
-                    Toast.fire({
-                        icon: 'success',
-                        title: 'Bienvenido al sistema'
-                    })
-            
-                    //Redirección a admin.html
-                    setTimeout( function() { window.location = "administrador.html"; }, 3200 );
+                    if (respuesta == "{\n\"acceso\": true,\n\"idUsu\": 1\n}" || respuesta == "{\n\"acceso\": true,\n\"idUsu\": 2\n}" || respuesta == "{\n\"acceso\": true,\n\"idUsu\": 3\n}"){
+                        const Toast = Swal.mixin({
+                            toast: true,
+                            position: 'top-end',
+                            showConfirmButton: false,
+                            timer: 3000,
+                            timerProgressBar: true,
+                            didOpen: (toast) => {
+                              toast.addEventListener('mouseenter', Swal.stopTimer)
+                              toast.addEventListener('mouseleave', Swal.resumeTimer)
+                            }
+                        })
+                          
+                        Toast.fire({
+                            icon: 'success',
+                            title: 'Bienvenido al sistema'
+                        })
+                
+                        //Redirección a admin.html
+                        setTimeout( function() { window.location = "administrador.html"; }, 3200 );
+                    } else  {
+                        const Toast = Swal.mixin({
+                            toast: true,
+                            position: 'top-end',
+                            showConfirmButton: false,
+                            timer: 3000,
+                            timerProgressBar: true,
+                            didOpen: (toast) => {
+                              toast.addEventListener('mouseenter', Swal.stopTimer)
+                              toast.addEventListener('mouseleave', Swal.resumeTimer)
+                            }
+                        })
+                          
+                        Toast.fire({
+                            icon: 'success',
+                            title: 'Bienvenido al sistema'
+                        })
+                
+                        //Redirección a index.html
+                        setTimeout( function() { window.location = "index.html"; }, 3200 );
+                    }
                 }
             }
         });

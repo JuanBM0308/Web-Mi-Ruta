@@ -5,14 +5,26 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" href="images/BusFinal.png" type="image/x-icon">
+
         <!-- LINK CSS -->
         <link rel="stylesheet" href="CSS/ingresar.css">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
         <!-- FIN LINK CSS -->
+
+        <!-- ALERLAS CSS -->
+        <script src="sweetalert2.min.js"></script>
+        <link rel="stylesheet" href="sweetalert2.min.css">
+        <!-- FIN ALERLAS CSS -->
+        
         <!--CSS JS Mapa-->
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
         <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
         <!--FIN CSS JS Mapa-->
+
+        <!--AJAX-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <!--FIN AJAX-->
+
         <title>Mi Ruta | Registro</title>
     </head>
 <body>
@@ -62,12 +74,17 @@
 
           <div class="contenido">
             <label for="Contraseña">Contraseña</label>
-            <input type="password" placeholder="Digite su contraseña" required id="contraseña_usu">
+            <input type="text" placeholder="Digite su contraseña" required id="contraseña_usu">
+          </div>
+
+          <div class="contenido">
+            <label for="Contraseña">Foto</label>
+            <input type="text" placeholder="Imagen en formato link" required id="foto_usuario_regi">
           </div>
         </div>
 
         <div class="Cajaboton">
-            <button type="button" class="boton1" value="" name="registrar" id="boton_registrar">Registrar</button>
+            <button type="button" class="boton1" value="" name="registrar" id="boton_registrar" onclick="agregar_usu_individual()">Registrar</button>
         </div>
 
         <div class="Cajaboton">
@@ -78,6 +95,10 @@
     <!-- LINK JS -->
     <script src="JS/main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> <!--Libreria Alerts-->
+    <script src="JS/alertas.js"></script> <!--Manejo Alertas-->
+    <script src="sweetalert2.all.min.js"></script> <!--Importar todas las herramientas-->
+    <script src="JS/ajax.js"></script> <!--Manejo AJAX-->
     <!-- FIN LINK JS -->
   </body>
 </html>

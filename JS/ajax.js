@@ -172,4 +172,66 @@ $(document).ready(function(){
         });
     });
 
+    //Agregar Usuario Admin
+    $('#agregarNewUsu').on('click', function(){
+        let datos = {
+            idUsu: 0,
+            correoUsu: $('#correoUsu').val(),
+            contraseniaUsu: $('#contraseñaUsu').val(),
+            nombreUsu: $('#nombreUsu').val(),
+            fotoUsu: $('#fotoNewUsu').val(),
+            tipoUsuario: $('#RolUsu').val()
+        }
+        let datosEnvio = JSON.stringify(datos)
+        console.log(datosEnvio)
+        $.ajax({
+            url: "http://localhost:8080/usuario/agregar",
+            type: "POST",
+            data: datosEnvio,
+            contentType: "application/JSON",
+            datatype: "JSON",
+            success:function agregar_usuario(respuesta){
+                if (respuesta){
+                    Swal.fire({
+                        title: 'Agregado!',
+                        text: 'Se agrego el usuario 👍',
+                        icon: 'success',
+                        confirmButtonText: 'Ok!'
+                    })
+                }
+            }
+        });
+    });
+
+    //Agregar usuario por la persona
+    $('#boton_registrar').on('click', function(){
+        let datos = {
+            idUsu: 0,
+            correoUsu: $('#correo_usu').val(),
+            contraseniaUsu: $('#contraseña_usu').val(),
+            nombreUsu: $('#nombre_completo_usu').val(),
+            fotoUsu: $('#foto_usuario_regi').val(),
+            tipoUsuario: 0
+        }
+        let datosEnvio = JSON.stringify(datos)
+        console.log(datosEnvio)
+        $.ajax({
+            url: "http://localhost:8080/usuario/agregar",
+            type: "POST",
+            data: datosEnvio,
+            contentType: "application/JSON",
+            datatype: "JSON",
+            success:function agregar_usuario(respuesta){
+                if (respuesta){
+                    Swal.fire({
+                        title: 'Felicitaciones!',
+                        text: 'Se ha registrado con exito ❤',
+                        icon: 'success',
+                        confirmButtonText: 'Wow!'
+                    })
+                }
+            }
+        });
+    });
+
 });

@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" href="images/BusFinal.png" type="image/x-icon">
         <!-- LINK CSS -->
-        <link rel="stylesheet" href="CSS/ingresar.css">
+        <link rel="stylesheet" href="CSS/style.css">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
         <!-- FIN LINK CSS -->
 
@@ -14,7 +14,7 @@
         <script src="sweetalert2.min.js"></script>
         <link rel="stylesheet" href="sweetalert2.min.css">
         <!-- FIN ALERLAS CSS -->
-        
+
         <!--CSS JS Mapa-->
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
         <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
@@ -23,63 +23,50 @@
         <!--AJAX-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <!--FIN AJAX-->
-        
-        <title>Mi Ruta | Ingreso</title>
+
+        <title>Mi Ruta | Usuarios</title>
     </head>
 <body>
     
-    <nav class="navbar navbar-expand-lg bg-body-tertiary navbar bg-dark" data-bs-theme="dark" style="width: 100%;">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary navbar bg-dark" data-bs-theme="dark">
 
         <!--Contenedor Responsive Navegacion-->
         <div class="container-fluid">
   
           <!--Titulo Web-->
-          <a class="navbar-brand" href="index.html">Mi Ruta</a>
-  
-          <!--Links Navegacion-->
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <div>
-                <ul class="navbar-nav">  
-                    <li class="nav-item">
-                      <a class="nav-link" href="rutas.html">Rutas</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="paradas.html">Paradas</a>
-                    </li>
-                  </ul>
+          <a class="navbar-brand" href="">Mi Ruta</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+           
+        </div>
+    </nav>
+    
+    <!-- Usuarios -->
+    <div class="container-fluid">
+
+      <div id="contenedorCardsUsuarios">
+        <!--CARDS Usuarios-->
+        <!-- <div class="card card-cascade border border-top-0" style="width: 25%; margin: 10px;">
+            
+            <div id="fondoCardUsu" style="display: flex; justify-content: center;" class="img-fluid container-fluid rounded-top">
+                <div style="height: 100px; width: 100px; text-align: center; margin-top: 10px; margin: 10px; background-color: #FFE194;" class="view view-cascade overlay rounded-circle"> 
+                    <img style="height: 100px; width: 100px;" class="card-img-top rounded-circle" src="https://cdn-icons-png.flaticon.com/512/2922/2922721.png"> 
+                </div>
             </div>
-          </div>        
-        </div>
-      </nav>
-
-      <!--Formulario Ingreso-->
-
-      <div class="formularios_ing_regi">
-
-        <h2 class="Titulo">Inicio Sesión</h2>
-
-        <img src="images/BusFinal.png" class="logo" alt="" srcset="">
-
-        <div class="datos">
-          <div class="contenido">
-            <label for="dato8">Correo</label>
-            <input type="text" placeholder="Digite su correo" required id="correo_ing">
-        </div>
-
-        <div class="contenido">
-            <label for="dato9">Contraseña</label>
-            <input type="password" placeholder="Digite su Contraseña" required id="contraseña_ing">
-          </div>
-        </div>
-
-        <div class="Cajaboton">
-          <button type="button" class="boton1" value="ingresar" name="ingresar" id="ingreso_usu" onclick="ingresar()">Ingresar</button>
-        </div>
-
-        <div class="Cajaboton">
-            <button type="button" class="boton2" value="actualizar" name="Registrar" id="actualizar"> <a><img src="images/search.png" class="icono" alt="" srcset=""></a>Inicia Sesión</button>
-        </div>
+             
+            <div class="card-body card-body-cascade text-center">
+               
+               <h4 class="card-title"><strong>Nombre Usu</strong></h4>
+               
+               <h5 class="font-weight-bold indigo-text py-2">ExampleEmail@Email.com</h5>
+               <h6 class="font-weight-bold indigo-text py-2">Tipo Usu</h6>
+            </div>
+        </div> -->
+        <!--FIN CARDS Usuarios-->
       </div>
+      
+    </div>
 
     <!-- LINK JS -->
     <script src="JS/main.js"></script>
@@ -88,6 +75,7 @@
     <script src="JS/alertas.js"></script> <!--Manejo Alertas-->
     <script src="sweetalert2.all.min.js"></script> <!--Importar todas las herramientas-->
     <script src="JS/ajax.js"></script> <!--Manejo AJAX-->
+    <script src="JS/listarUsuarios.js"></script> <!--Listar usuarios-->
     <!-- FIN LINK JS -->
-  </body>
+</body>
 </html>

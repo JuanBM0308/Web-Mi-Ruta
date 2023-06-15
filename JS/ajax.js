@@ -133,7 +133,7 @@ $(document).ready(function(){
             contraseniaUsu: $('#contraseña_ing').val()
         }
         let datosEnvio = JSON.stringify(datos)
-        console.log(datosEnvio)
+        //console.log(datosEnvio)
         $.ajax({
             url: "http://localhost:8080/usuario/login",
             type: "POST",
@@ -151,25 +151,109 @@ $(document).ready(function(){
                         confirmButtonText: 'Ok!'
                     })
                 } else {
-                    const Toast = Swal.mixin({
-                        toast: true,
-                        position: 'top-end',
-                        showConfirmButton: false,
-                        timer: 3000,
-                        timerProgressBar: true,
-                        didOpen: (toast) => {
-                          toast.addEventListener('mouseenter', Swal.stopTimer)
-                          toast.addEventListener('mouseleave', Swal.resumeTimer)
-                        }
-                    })
-                      
-                    Toast.fire({
+                    if (respuesta == "{\n\"acceso\": true,\n\"idUsu\": 1\n}" || respuesta == "{\n\"acceso\": true,\n\"idUsu\": 2\n}" || respuesta == "{\n\"acceso\": true,\n\"idUsu\": 3\n}"){
+                        const Toast = Swal.mixin({
+                            toast: true,
+                            position: 'top-end',
+                            showConfirmButton: false,
+                            timer: 3000,
+                            timerProgressBar: true,
+                            didOpen: (toast) => {
+                              toast.addEventListener('mouseenter', Swal.stopTimer)
+                              toast.addEventListener('mouseleave', Swal.resumeTimer)
+                            }
+                        })
+                          
+                        Toast.fire({
+                            icon: 'success',
+                            title: 'Bienvenido al sistema'
+                        })
+                
+                        //Redirección a admin.html
+                        setTimeout( function() { window.location = "administrador.html"; }, 3200 );
+                    } else  {
+                        const Toast = Swal.mixin({
+                            toast: true,
+                            position: 'top-end',
+                            showConfirmButton: false,
+                            timer: 3000,
+                            timerProgressBar: true,
+                            didOpen: (toast) => {
+                              toast.addEventListener('mouseenter', Swal.stopTimer)
+                              toast.addEventListener('mouseleave', Swal.resumeTimer)
+                            }
+                        })
+                          
+                        Toast.fire({
+                            icon: 'success',
+                            title: 'Bienvenido al sistema'
+                        })
+                
+                        //Redirección a index.html
+                        setTimeout( function() { window.location = "index.html"; }, 3200 );
+                    }
+                }
+            }
+        });
+    });
+
+    //Agregar Usuario Admin
+    $('#agregarNewUsu').on('click', function(){
+        let datos = {
+            idUsu: 0,
+            correoUsu: $('#correoUsu').val(),
+            contraseniaUsu: $('#contraseñaUsu').val(),
+            nombreUsu: $('#nombreUsu').val(),
+            fotoUsu: $('#fotoNewUsu').val(),
+            tipoUsuario: $('#RolUsu').val()
+        }
+        let datosEnvio = JSON.stringify(datos)
+        console.log(datosEnvio)
+        $.ajax({
+            url: "http://localhost:8080/usuario/agregar",
+            type: "POST",
+            data: datosEnvio,
+            contentType: "application/JSON",
+            datatype: "JSON",
+            success:function agregar_usuario(respuesta){
+                if (respuesta){
+                    Swal.fire({
+                        title: 'Agregado!',
+                        text: 'Se agrego el usuario 👍',
                         icon: 'success',
-                        title: 'Bienvenido al sistema'
+                        confirmButtonText: 'Ok!'
                     })
-            
-                    //Redirección a admin.html
-                    setTimeout( function() { window.location = "administrador.html"; }, 3200 );
+                }
+            }
+        });
+    });
+
+    //Agregar usuario por la persona
+    $('#boton_registrar').on('click', function(){
+        let datos = {
+            idUsu: 0,
+            correoUsu: $('#correo_usu').val(),
+            contraseniaUsu: $('#contraseña_usu').val(),
+            nombreUsu: $('#nombre_completo_usu').val(),
+            fotoUsu: $('#foto_usuario_regi').val(),
+            tipoUsuario: 0
+        }
+        let datosEnvio = JSON.stringify(datos)
+        console.log(datosEnvio)
+        $.ajax({
+            url: "http://localhost:8080/usuario/agregar",
+            type: "POST",
+            data: datosEnvio,
+            contentType: "application/JSON",
+            datatype: "JSON",
+            success:function agregar_usuario(respuesta){
+                if (respuesta){
+                    Swal.fire({
+                        title: 'Felicitaciones!',
+                        text: 'Se ha registrado con exito ❤',
+                        icon: 'success',
+                        confirmButtonText: 'Wow!'
+                    })
                 }
             }
         });

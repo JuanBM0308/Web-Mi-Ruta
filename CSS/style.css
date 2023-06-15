@@ -4,6 +4,10 @@
     padding: 0;
 }
 
+@import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700');
+@import url('https://fonts.googleapis.com/css?family=Libre+Baskerville:400,700');
+
 #map {
     height: 100vh;
     width: 100%;
@@ -51,6 +55,13 @@ li {
 }
 
 #contenedorCardsParadas {
+    display: flex;  
+    flex-wrap: wrap;
+    margin: 10px;
+    justify-content: center;
+}
+
+#contenedorCardsUsuarios {
     display: flex;  
     flex-wrap: wrap;
     margin: 10px;

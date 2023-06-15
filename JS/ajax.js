@@ -102,6 +102,31 @@ $(document).ready(function(){
         });
     });
 
+    $('#agregarBus').on('click', function(){
+        let datos = {
+            placaBus: $('#placa').val()
+        }
+        let datosEnvio = JSON.stringify(datos)
+        console.log(datosEnvio)
+        $.ajax({
+            url: "http://localhost:8080/bus/agregar",
+            type: "POST",
+            data: datosEnvio,
+            contentType: "application/JSON",
+            datatype: "JSON",
+            success:function agregar_bus(respuesta){
+                if (respuesta){
+                    Swal.fire({
+                        title: 'Agregado!',
+                        text: 'Se agrego un bus ⭐🚌',
+                        icon: 'success',
+                        confirmButtonText: 'Ok!'
+                    })
+                }
+            }
+        });
+    });
+
     $('#ingreso_usu').on('click', function(){
         let datos = {
             correoUsu: $('#correo_ing').val(),

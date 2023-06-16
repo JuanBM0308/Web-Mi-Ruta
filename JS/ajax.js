@@ -127,6 +127,7 @@ $(document).ready(function(){
         });
     });
 
+    //Login
     $('#ingreso_usu').on('click', function(){
         let datos = {
             correoUsu: $('#correo_ing').val(),

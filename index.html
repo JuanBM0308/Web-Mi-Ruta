@@ -10,6 +10,10 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <!-- FIN LINK CSS -->
 
+    <!--Material Extra CSS-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <!--FIN Material Extra CSS-->
+
     <!-- ALERLAS CSS -->
     <script src="sweetalert2.min.js"></script>
     <link rel="stylesheet" href="sweetalert2.min.css">
@@ -83,37 +87,40 @@
           <div id="contenedorUnion">
             <div class="buscador">
               <ul id="scroll-container" class="sidenav-menu">
+                <div style="text-align: center;">
+                  <h4 class="text-white">Traza mi ruta: </h4>
+                </div>
                 <div class="input-group rounded">
                   <select id="lugar_inicio" class="form-select" aria-label="Default select example" style="margin-bottom: 2em;">
                     <option disabled selected>Lugar Inicio 🚩</option>
-                    <option value="4.7121273,-74.2215775">Ecoplaza Centro Comercial</option>
+                    <!-- <option value="4.7121273,-74.2215775">Ecoplaza Centro Comercial</option>
                     <option value="4.7109645,-74.2227103">Centro Comercial El Trébol</option>
-                    <option value="4.7133231,-74.218804">Mercado Zapatoca Mosquera</option>
+                    <option value="4.7133231,-74.218804">Mercado Zapatoca Mosquera</option> -->
                   </select>
                 </div>
                 <div class="input-group rounded">
                   <select id="lugar_fin" class="form-select" aria-label="Default select example" style="margin-bottom: 2em;">
                     <option disabled selected>Lugar Fin 🏁</option>
-                    <option value="4.7133231,-74.218804">Mercado Zapatoca Mosquera</option>
+                    <!-- <option value="4.7133231,-74.218804">Mercado Zapatoca Mosquera</option>
                     <option value="4.7121273,-74.2215775">Ecoplaza Centro Comercial</option>
-                    <option value="4.7109645,-74.2227103">Centro Comercial El Trébol</option>    
+                    <option value="4.7109645,-74.2227103">Centro Comercial El Trébol</option>    --> 
                   </select>
                 </div>
                 <div class="centrar-algo">
-                    <button type="button" class="btn btn-danger rounded" id="favoritos" onclick="favoritos()">
+                    <!-- <button type="button" class="btn btn-danger rounded" id="favoritos" onclick="favoritos()">
                         <i class="bi bi-heart-fill"></i>
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16">
                             <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
                         </svg>
-                    </button>
+                    </button> -->
                 </div>
                 <div id="buscardorParada">
                   <div style="height: 1px; background-color: #ff9933; margin: 10px;"></div>
                   <div class="input-group rounded">
                     <select id="ver_paradas"  class="form-select" aria-label="Default select example" style="margin-bottom: 2em;" onchange="ver_parada_mapa()">
                       <option disabled selected>Buscar Paradas 🔍</option>
-                      <option value="4.73918,-74.2782">Madrid - Prosperidad</option>
-                      <option value="4.73018,-74.2595">Madrid - María Jose Parrilla</option>
+                      <!-- <option value="4.73918,-74.2782">Madrid - Prosperidad</option>
+                      <option value="4.73018,-74.2595">Madrid - María Jose Parrilla</option> -->
                     </select>
                   </div>
                 </div>
@@ -178,7 +185,8 @@
     <script src="JS/main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> <!--Libreria Alerts-->
-    <script src="JS/alertas.js"></script> <!--Manejo Alertas-->
+    <script src="JS/alertas.js"></script> <!--Manejo Alertas--> 
+    <script src="JS/paradasDisponibles.js"></script> <!--Todas las paradas select-->
     <script src="sweetalert2.all.min.js"></script> <!--Importar todas las herramientas-->
     <script src="JS/ajax.js"></script> <!--Manejo AJAX-->
     <!-- FIN LINK JS -->

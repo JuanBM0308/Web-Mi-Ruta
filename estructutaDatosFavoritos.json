@@ -1,0 +1,18 @@
+[
+    {
+        "idRut": 8,
+        "lugarInicioRut": "Rubí",
+        "lugarDestinoRut": "Porvenir Río",
+        "horaInicioRut": "04:30:00",
+        "horaFinalRut": "08:00:00",
+        "diasDisponiblesRut": "L/M/X/J/V",
+        "usuarioHasRuta": [
+            {
+                "idUsuHasRut": 2
+            }
+        ],
+        "paradaHasRuta": [],
+        "busHasRuta": [],
+        "giroHasRuta": []
+    }
+]

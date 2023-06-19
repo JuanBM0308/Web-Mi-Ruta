@@ -135,6 +135,8 @@ $(document).ready(function(){
         }
         let datosEnvio = JSON.stringify(datos)
         //console.log(datosEnvio)
+        let correoValLocal = $('#correo_ing').val()
+        localStorage.setItem("UsuCorreo", correoValLocal); //Esto guarda la variable de secion
         $.ajax({
             url: "http://localhost:8080/usuario/login",
             type: "POST",
@@ -153,6 +155,11 @@ $(document).ready(function(){
                     })
                 } else {
                     if (respuesta == "{\n\"acceso\": true,\n\"idUsu\": 1\n}" || respuesta == "{\n\"acceso\": true,\n\"idUsu\": 2\n}" || respuesta == "{\n\"acceso\": true,\n\"idUsu\": 3\n}"){
+                        function readCookie(name) {
+
+                            return decodeURIComponent(document.cookie.replace(new RegExp("(?:(?:^|.*;)\\s*" + name.replace(/[\-\.\+\*]/g, "\\$&") + "\\s*\\=\\s*([^;]*).*$)|^.*$"), "$1")) || null;
+                          
+                        }
                         const Toast = Swal.mixin({
                             toast: true,
                             position: 'top-end',

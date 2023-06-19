@@ -53,3 +53,23 @@ document.getElementById('lugar_inicio').addEventListener('change',function(e){
     map.flyTo(coords,19);
     L.marker(coords,{alt: 'Parada Ver'}).addTo(map).bindPopup('Parada Example');
 }); */
+
+//Cerrar Sesion
+function cerrar_sesion() {
+    Swal.fire({
+        title: 'Sesión Cerrada!',
+        text: 'Hasta Pronto',
+        icon: 'success',
+        confirmButtonText: 'Bye Bye!',
+        customClass: {
+            confirmButton: 'btn btn-success',
+            cancelButton: 'btn btn-danger'
+        },
+        buttonsStyling: false
+    })
+
+    localStorage.setItem("UsuCorreo", "Cierre##@##gmail.com"); //Modificar variable para cierre
+
+    //Redirección a index.html
+    setTimeout( function() { window.location = "index.html"; }, 2000 );
+}

@@ -11,27 +11,34 @@ $(document).ready(function(){
             for (i = 0; i <= respuesta.length; i++){
                 selectParadasIni.innerHTML += '<option value="'+respuesta[i].latitudPar+','+respuesta[i].longitudPar+'">'+respuesta[i].nombrePar+'</option>'
                 selectParadasFin.innerHTML += '<option value="'+respuesta[i].latitudPar+','+respuesta[i].longitudPar+'">'+respuesta[i].nombrePar+'</option>'
-                selectParadasBuscar.innerHTML += '<option id="'+respuesta[i].idPar+'" onclick="nombreParadaVer()" value="'+respuesta[i].latitudPar+','+respuesta[i].longitudPar+'">'+respuesta[i].nombrePar+'</option>'
+                selectParadasBuscar.innerHTML += '<option id="'+respuesta[i].imgPar+'" onclick="nombreParadaVer()" value="'+respuesta[i].latitudPar+','+respuesta[i].longitudPar+'">'+respuesta[i].nombrePar+'</option>'
 
-                let parada = respuesta[i].imgPar
-                //alert(parada)
+                //let imgParada = document.getElementById(respuesta[i].imgPar).id //Obtener la img
+                //console.log(imgParada+" esto es la img")
+
                 document.getElementById('ver_paradas').addEventListener('change',function(e){
                     let coords = e.target.value.split(",");
+                    let nomParada = $(this).find('option:selected').text(); //Buscar el txt de la parada
                     map.flyTo(coords,19);
                     L.marker(coords,{alt: 'Parada Ver'}).addTo(map).bindPopup(function nombreParadaVer(){
                         if (e.target.value += respuesta){
                             
                             Swal.fire({
-                                title: "a",
-                                text: "Esto deberia ser el",
-                                imageUrl: parada,
+                                title: nomParada,
+                                text: coords,
                                 imageWidth: 400,
                                 imageHeight: 200,
-                                imageAlt: 'Custom image',
+                                imageAlt: 'Imagen Parada',
                                 customClass: {
                                     confirmButton: 'btn btn-dark'
                                   },
-                                  buttonsStyling: false
+                                buttonsStyling: false,
+                                showClass: {
+                                    popup: 'animate__animated animate__fadeInDown'
+                                },
+                                hideClass: {
+                                    popup: 'animate__animated animate__fadeOutUp'
+                                }
                             })
 
                         }

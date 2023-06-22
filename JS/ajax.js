@@ -22,7 +22,6 @@ $(document).ready(function(){
 
     $('#agregarParada').on('click', function(){
         let datos = {
-            idPar:0,
             nombrePar: $('#nombreParada').val(),
             direccionPar: $('#direcParada').val(),
             latitudPar: $('#latiParada').val(),
@@ -32,7 +31,7 @@ $(document).ready(function(){
         let datosEnvio = JSON.stringify(datos)
         console.log(datosEnvio)
         $.ajax({
-            url: "http://localhost:8080/parada/agregar",
+            url: "http://localhost:8080/parada/guardar",
             type: "POST",
             data: datosEnvio,
             contentType: "application/JSON",
@@ -59,11 +58,18 @@ $(document).ready(function(){
             type: "DELETE",
             datatype: "JSON",
             success: function eliminar_ruta(respuesta) {
-                if (respuesta){
+                if (respuesta == "{'respuesta' : 'Ruta eliminada con exito'}"){
                     Swal.fire({
                         title: 'Eliminada!',
                         text: 'Se elimino la ruta 🗺',
                         icon: 'success',
+                        confirmButtonText: 'Ok!'
+                    })
+                } else {
+                    Swal.fire({
+                        title: 'Error!',
+                        text: 'Error al eliminar ruta 😫',
+                        icon: 'error',
                         confirmButtonText: 'Ok!'
                     })
                 }
@@ -74,7 +80,6 @@ $(document).ready(function(){
 
     $('#agregarRuta').on('click', function(){
         let datos = {
-            idRut: 0,
             lugarInicioRut: $('#LugarInicio').val(),
             lugarDestinoRut: $('#LugarFinal').val(),
             horaInicioRut: $('#HI').val(),
@@ -90,11 +95,18 @@ $(document).ready(function(){
             contentType: "application/JSON",
             datatype: "JSON",
             success:function agregar_ruta(respuesta){
-                if (respuesta){
+                if (respuesta == "{'respuesta': 'Ruta agregada con exito'}"){
                     Swal.fire({
                         title: 'Agregada!',
                         text: 'Se agrego la ruta ⭐',
                         icon: 'success',
+                        confirmButtonText: 'Ok!'
+                    })
+                } else {
+                    Swal.fire({
+                        title: 'Error!',
+                        text: 'Error al agregar ruta 🤔',
+                        icon: 'error',
                         confirmButtonText: 'Ok!'
                     })
                 }
@@ -109,22 +121,56 @@ $(document).ready(function(){
         let datosEnvio = JSON.stringify(datos)
         console.log(datosEnvio)
         $.ajax({
-            url: "http://localhost:8080/bus/agregar",
+            url: "http://localhost:8080/bus/guardar",
             type: "POST",
             data: datosEnvio,
             contentType: "application/JSON",
             datatype: "JSON",
             success:function agregar_bus(respuesta){
-                if (respuesta){
+                if (respuesta == "{'respuesta': 'Bus agregado con exito'}"){
                     Swal.fire({
                         title: 'Agregado!',
                         text: 'Se agrego un bus ⭐🚌',
                         icon: 'success',
                         confirmButtonText: 'Ok!'
                     })
+                } else {
+                    Swal.fire({
+                        title: 'Error!',
+                        text: 'Error al agregar bus 💔🚌',
+                        icon: 'error',
+                        confirmButtonText: 'Ok!'
+                    })
                 }
             }
         });
+    });
+
+    $('#eliminarBus').on('click', function(){
+        let eliminar_bus = $('#BusEli').val();
+        console.log(eliminar_bus)
+        $.ajax({
+            url: "http://localhost:8080/bus/eliminar/"+eliminar_bus,
+            type: "DELETE",
+            datatype: "JSON",
+            success: function eliminar_bus(respuesta) {
+                if (respuesta == "{'respuesta':'Bus eliminado con exito'}"){
+                    Swal.fire({
+                        title: 'Eliminado!',
+                        text: 'Se elimino el bus 🥰',
+                        icon: 'success',
+                        confirmButtonText: 'Ok!'
+                    })
+                } else {
+                    Swal.fire({
+                        title: 'Error!',
+                        text: 'Error al eliminar bus 💢',
+                        icon: 'error',
+                        confirmButtonText: 'Ok!'
+                    })
+                }
+            }
+        })
     });
 
     //Login
@@ -210,7 +256,6 @@ $(document).ready(function(){
     //Agregar Usuario Admin
     $('#agregarNewUsu').on('click', function(){
         let datos = {
-            idUsu: 0,
             correoUsu: $('#correoUsu').val(),
             contraseniaUsu: $('#contraseñaUsu').val(),
             nombreUsu: $('#nombreUsu').val(),
@@ -220,17 +265,24 @@ $(document).ready(function(){
         let datosEnvio = JSON.stringify(datos)
         console.log(datosEnvio)
         $.ajax({
-            url: "http://localhost:8080/usuario/agregar",
+            url: "http://localhost:8080/usuario/guardar",
             type: "POST",
             data: datosEnvio,
             contentType: "application/JSON",
             datatype: "JSON",
             success:function agregar_usuario(respuesta){
-                if (respuesta){
+                if (respuesta == "{'respuesta': 'Usuario agregado con exito'}"){
                     Swal.fire({
                         title: 'Agregado!',
                         text: 'Se agrego el usuario 👍',
                         icon: 'success',
+                        confirmButtonText: 'Ok!'
+                    })
+                } else {
+                    Swal.fire({
+                        title: 'Error!',
+                        text: 'Error al agregar el usuario 👎',
+                        icon: 'error',
                         confirmButtonText: 'Ok!'
                     })
                 }
@@ -241,7 +293,6 @@ $(document).ready(function(){
     //Agregar usuario por la persona
     $('#boton_registrar').on('click', function(){
         let datos = {
-            idUsu: 0,
             correoUsu: $('#correo_usu').val(),
             contraseniaUsu: $('#contraseña_usu').val(),
             nombreUsu: $('#nombre_completo_usu').val(),
@@ -251,7 +302,7 @@ $(document).ready(function(){
         let datosEnvio = JSON.stringify(datos)
         console.log(datosEnvio)
         $.ajax({
-            url: "http://localhost:8080/usuario/agregar",
+            url: "http://localhost:8080/usuario/guardar",
             type: "POST",
             data: datosEnvio,
             contentType: "application/JSON",

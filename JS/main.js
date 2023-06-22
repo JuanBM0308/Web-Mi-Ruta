@@ -47,13 +47,6 @@ document.getElementById('lugar_inicio').addEventListener('change',function(e){
 
 // PARTE LOGICA HTML
 
-//Fly Map ver paradas
-/* document.getElementById('ver_paradas').addEventListener('change',function(e){
-    let coords = e.target.value.split(",");
-    map.flyTo(coords,19);
-    L.marker(coords,{alt: 'Parada Ver'}).addTo(map).bindPopup('Parada Example');
-}); */
-
 //Cerrar Sesion
 function cerrar_sesion() {
     Swal.fire({
@@ -62,8 +55,7 @@ function cerrar_sesion() {
         icon: 'success',
         confirmButtonText: 'Bye Bye!',
         customClass: {
-            confirmButton: 'btn btn-success',
-            cancelButton: 'btn btn-danger'
+            confirmButton: 'disabled btn btn-success',
         },
         buttonsStyling: false
     })

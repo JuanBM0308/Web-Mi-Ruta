@@ -19,7 +19,7 @@ $(document).ready(function(){
                 document.getElementById('ver_paradas').addEventListener('change',function(e){
                     let coords = e.target.value.split(",");
                     let nomParada = $(this).find('option:selected').text(); //Buscar el txt de la parada
-                    map.flyTo(coords,19);
+                    map.flyTo(coords,17);
                     L.marker(coords,{alt: 'Parada Ver'}).addTo(map).bindPopup(function nombreParadaVer(){
                         if (e.target.value += respuesta){
                             

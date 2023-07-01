@@ -1,11 +1,21 @@
 [
     {
-        "idUsu": 1,
-        "correoUsu": "arturo@gmail.com",
-        "contraseniaUsu": "contraseña1",
-        "nombreUsu": "ArturoUsu",
+        "identificacionUsu": 1234567893,
+        "correoUsu": "juan@gmail.com",
+        "contraseniaUsu": "contrasena3",
+        "nombreUsu": "juanUsu",
         "fotoUsu": "https://ath2.unileverservices.com/wp-content/uploads/sites/13/2020/01/24234353/cortes-de-pelo-con-barba-9.jpg",
-        "tipoUsuario": 1,
-        "usuarioHasRuta": []
+        "tipoUsuario": 2,
+        "usuarioHasRuta": [],
+        "bus": {
+            "placaBus": "abc123",
+            "longitudBus": -74.22227559026138,
+            "latitudBus": 4.735193068654548,
+            "busHasRuta": [
+                {
+                    "idBusHasRut": 1
+                }
+            ]
+        }
     }
 ]

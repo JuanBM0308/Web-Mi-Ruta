@@ -40,14 +40,15 @@ body {
 .contenido {
     margin-bottom: 1em;
     display: flex;
-    flex-direction: column;}
+    flex-direction: column;
+}
 
 label {
     color: #F1F1F1;
 }
 
 input {
-    width: 220px;
+    width: auto;
     height: 35px;
     border-radius: 5px;
     margin-left: 1em;

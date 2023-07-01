@@ -1,5 +1,6 @@
 $(document).ready(function(){
 
+    //Eliminar Parada
     $('#eliminarParada').on('click', function(){
         let eliminar_parada = $('#idParadaEli').val();
         console.log(eliminar_parada)
@@ -20,6 +21,7 @@ $(document).ready(function(){
         })
     });
 
+    //Agregar Parada
     $('#agregarParada').on('click', function(){
         let datos = {
             nombrePar: $('#nombreParada').val(),
@@ -49,7 +51,7 @@ $(document).ready(function(){
         });
     });
 
-
+    //Eliminar Ruta
     $('#eliminarRuta').on('click', function(){
         let eliminar_ruta = $('#idRutaEli').val();
         console.log(eliminar_ruta)
@@ -77,7 +79,7 @@ $(document).ready(function(){
         })
     });
 
-
+    //Agregar Ruta
     $('#agregarRuta').on('click', function(){
         let datos = {
             lugarInicioRut: $('#LugarInicio').val(),
@@ -114,6 +116,7 @@ $(document).ready(function(){
         });
     });
 
+    //Agregar Bus
     $('#agregarBus').on('click', function(){
         let datos = {
             placaBus: $('#placa').val()
@@ -146,6 +149,7 @@ $(document).ready(function(){
         });
     });
 
+    //Eliminar Bus
     $('#eliminarBus').on('click', function(){
         let eliminar_bus = $('#BusEli').val();
         console.log(eliminar_bus)
@@ -198,14 +202,10 @@ $(document).ready(function(){
                         confirmButtonText: 'Ok!'
                     })
                 } else {
-                    if (respuesta == "{\n\"acceso\": true,\n\"idUsu\": 1\n}" || respuesta == "{\n\"acceso\": true,\n\"idUsu\": 2\n}" || respuesta == "{\n\"acceso\": true,\n\"idUsu\": 3\n}"){
+                    if (respuesta == "{\n\"acceso\": true,\n\"idUsu\": 1234567894\n}"){
                         let correoValLocal = $('#correo_ing').val()
                         localStorage.setItem("UsuCorreo", correoValLocal); //Esto guarda la variable de sesion
-                        function readCookie(name) {
 
-                            return decodeURIComponent(document.cookie.replace(new RegExp("(?:(?:^|.*;)\\s*" + name.replace(/[\-\.\+\*]/g, "\\$&") + "\\s*\\=\\s*([^;]*).*$)|^.*$"), "$1")) || null;
-                          
-                        }
                         const Toast = Swal.mixin({
                             toast: true,
                             position: 'top-end',
@@ -256,6 +256,7 @@ $(document).ready(function(){
     //Agregar Usuario Admin
     $('#agregarNewUsu').on('click', function(){
         let datos = {
+            identificacionUsu: $('#identiUsu').val(),
             correoUsu: $('#correoUsu').val(),
             contraseniaUsu: $('#contraseñaUsu').val(),
             nombreUsu: $('#nombreUsu').val(),
@@ -271,7 +272,9 @@ $(document).ready(function(){
             contentType: "application/JSON",
             datatype: "JSON",
             success:function agregar_usuario(respuesta){
-                if (respuesta == "{'respuesta': 'Usuario agregado con exito'}"){
+                //let coco = JSON.stringify(respuesta)
+                //console.log(coco)
+                if (respuesta == "{\n\"registro\": true\n}"){
                     Swal.fire({
                         title: 'Agregado!',
                         text: 'Se agrego el usuario 👍',
@@ -290,9 +293,38 @@ $(document).ready(function(){
         });
     });
 
+    //Eliminar Usuario
+    $('#eliminarUsuario').on('click', function(){
+        let eliminar_usu = $('#UsuEli').val();
+        console.log(eliminar_usu)
+        $.ajax({
+            url: "http://localhost:8080/usuario/eliminar/"+eliminar_usu,
+            type: "DELETE",
+            datatype: "JSON",
+            success: function eliminar_usuario(respuesta) {
+                if (respuesta == "{'respuesta' : 'Usuario eliminado con exito'}"){
+                    Swal.fire({
+                        title: 'Eliminado!',
+                        text: 'Se elimino el usuario 🥰',
+                        icon: 'success',
+                        confirmButtonText: 'Ok!'
+                    })
+                } else {
+                    Swal.fire({
+                        title: 'Error!',
+                        text: 'Error al eliminar el usuario 💢',
+                        icon: 'error',
+                        confirmButtonText: 'Ok!'
+                    })
+                }
+            }
+        })
+    });
+
     //Agregar usuario por la persona
     $('#boton_registrar').on('click', function(){
         let datos = {
+            identificacionUsu: $('#identi_usu').val(),
             correoUsu: $('#correo_usu').val(),
             contraseniaUsu: $('#contraseña_usu').val(),
             nombreUsu: $('#nombre_completo_usu').val(),
@@ -302,22 +334,98 @@ $(document).ready(function(){
         let datosEnvio = JSON.stringify(datos)
         console.log(datosEnvio)
         $.ajax({
-            url: "http://localhost:8080/usuario/guardar",
+            url: "http://localhost:8080/usuario/comprobar",
             type: "POST",
             data: datosEnvio,
             contentType: "application/JSON",
             datatype: "JSON",
             success:function agregar_usuario(respuesta){
-                if (respuesta){
+                console.log(respuesta)
+                console.log(typeof respuesta + " Este es el tipo de dato")
+                
+                //Procesamos la respuesta
+                function getNumbersInString(string) {
+                    var tmp = string.split("");
+                    var map = tmp.map(function(current) {
+                      if (!isNaN(parseInt(current))) {
+                        return current;
+                      }
+                    });
+                  
+                    var numbers = map.filter(function(value) {
+                      return value != undefined;
+                    });
+                  
+                    return numbers.join("");
+                }
+
+                let respuestaProcesada = getNumbersInString(respuesta)
+
+                let pin = prompt("Revise su e-mail e inserte el PIN: ")
+                
+                if (respuestaProcesada == parseInt(pin)){
+                    $.ajax({
+                        url: "http://localhost:8080/usuario/guardar",
+                        type: "POST",
+                        data: datosEnvio,
+                        contentType: "application/JSON",
+                        datatype: "JSON",
+                        success:function agregar_usuario(respuesta){
+                            if (respuesta){
+                                Swal.fire({
+                                    title: 'Felicitaciones!',
+                                    text: 'Se ha registrado con exito ❤',
+                                    icon: 'success',
+                                    confirmButtonText: 'Wow!'
+                                })
+                            }
+                        }
+                    });                   
+                } else {
                     Swal.fire({
-                        title: 'Felicitaciones!',
-                        text: 'Se ha registrado con exito ❤',
-                        icon: 'success',
-                        confirmButtonText: 'Wow!'
+                        title: 'Ohhhh!',
+                        text: 'Pin incorrecto',
+                        icon: 'error',
+                        confirmButtonText: '🤕'
                     })
                 }
             }
         });
+    
+    });
+
+    //Eliminar Favorito
+    $('#eliFavorito').on('click', function(){
+        let datos = {
+            correoUsu: localStorage.getItem("UsuCorreo"),
+            idRut: $('#eliFavorito').val()
+        }
+        let datosEnvio = JSON.stringify(datos)
+        console.log(datosEnvio)
+        $.ajax({
+            url: "http://localhost:8080/ruta/eliminarFav",
+            type: "POST",
+            data: datosEnvio,
+            contentType: "application/JSON",
+            datatype: "JSON",
+            success: function eliminar_fav(respuesta) {
+                if (respuesta == "{'respuesta': 'Eliminada de favoritos'}"){
+                    Swal.fire({
+                        title: 'Eliminada!',
+                        text: 'Se elimino la ruta favorita 🥰',
+                        icon: 'success',
+                        confirmButtonText: 'Ok!'
+                    })
+                } else {
+                    Swal.fire({
+                        title: 'Error!',
+                        text: 'No se logro eliminar tu favorito 💢',
+                        icon: 'error',
+                        confirmButtonText: 'Ok!'
+                    })
+                }
+            }
+        })
     });
 
 });

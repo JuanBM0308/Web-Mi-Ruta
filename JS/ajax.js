@@ -51,6 +51,44 @@ $(document).ready(function(){
         });
     });
 
+    //Actualizar Parada
+    $('#actualizarParada').on('click', function() {
+        let datos = {
+            idPar: $('#idParMod').val(),
+            nombrePar: $('#nombreParadaMod').val(),
+            direccionPar: $('#direcParadaMod').val(),
+            longitudPar: $('#longiParadaMod').val(),
+            latitudPar: $('#latiParadaMod').val(),
+            imgPar: $('#imgParadaMod').val()
+        }
+        let datosEnvio = JSON.stringify(datos)
+        console.log(datosEnvio)
+        $.ajax({
+            url: "http://localhost:8080/parada/actualizar",
+            type: "PUT",
+            data: datosEnvio,
+            contentType: "application/JSON",
+            datatype: "JSON",
+            success:function actualizar_parada(respuesta){
+                if (respuesta == "{'respuesta' : 'Se realizo actualizacion de la parada'}"){
+                    Swal.fire({
+                        title: 'Actualizada!',
+                        text: 'Se actualizo la parada ⭐',
+                        icon: 'success',
+                        confirmButtonText: 'Ok!'
+                    })
+                } else {
+                    Swal.fire({
+                        title: 'Oh oh!',
+                        text: 'Hubo un error al actualizar 😥',
+                        icon: 'error',
+                        confirmButtonText: 'Vale!'
+                    })
+                }
+            }
+        });
+    });
+
     //Eliminar Ruta
     $('#eliminarRuta').on('click', function(){
         let eliminar_ruta = $('#idRutaEli').val();
@@ -110,6 +148,44 @@ $(document).ready(function(){
                         text: 'Error al agregar ruta 🤔',
                         icon: 'error',
                         confirmButtonText: 'Ok!'
+                    })
+                }
+            }
+        });
+    });
+
+    //Actualizar Ruta
+    $('#actualizarRuta').on('click', function() {
+        let datos = {
+            idRut: $('#idRutMod').val(),
+            lugarInicioRut: $('#LugarInicioMod').val(),
+            lugarDestinoRut: $('#LugarFinalMod').val(),
+            horaInicioRut: $('#HIMod').val(),
+            horaFinalRut: $('#HFMod').val(),
+            diasDisponiblesRut: $('#diasDisponiblesMod').val()
+        }
+        let datosEnvio = JSON.stringify(datos)
+        console.log(datosEnvio)
+        $.ajax({
+            url: "http://localhost:8080/ruta/actualizar",
+            type: "PUT",
+            data: datosEnvio,
+            contentType: "application/JSON",
+            datatype: "JSON",
+            success:function actualizar_ruta(respuesta){
+                if (respuesta == "{'respuesta' : 'Se realizo actualizacion de la ruta'}"){
+                    Swal.fire({
+                        title: 'Actualizada!',
+                        text: 'Se actualizo la ruta ⭐',
+                        icon: 'success',
+                        confirmButtonText: 'Ok!'
+                    })
+                } else {
+                    Swal.fire({
+                        title: 'Oh oh!',
+                        text: 'Hubo un error al actualizar 😥',
+                        icon: 'error',
+                        confirmButtonText: 'Vale!'
                     })
                 }
             }
@@ -324,7 +400,6 @@ $(document).ready(function(){
     //Agregar usuario por la persona
     $('#boton_registrar').on('click', function(){
         let datos = {
-            identificacionUsu: $('#identi_usu').val(),
             correoUsu: $('#correo_usu').val(),
             contraseniaUsu: $('#contraseña_usu').val(),
             nombreUsu: $('#nombre_completo_usu').val(),
@@ -371,6 +446,7 @@ $(document).ready(function(){
                         contentType: "application/JSON",
                         datatype: "JSON",
                         success:function agregar_usuario(respuesta){
+                            //alert(respuesta)
                             if (respuesta){
                                 Swal.fire({
                                     title: 'Felicitaciones!',
@@ -394,10 +470,50 @@ $(document).ready(function(){
     
     });
 
-    //Eliminar Favorito
-    $('#eliFavorito').on('click', function(){
+    //Actualizar Usuario
+    $('#actualizarUsuario').on('click', function() {
         let datos = {
-            correoUsu: localStorage.getItem("UsuCorreo"),
+            idUsu: $('#idUsuMod').val(),
+            correoUsu: $('#correoUsuMod').val(),
+            contraseniaUsu: $('#contraseñaUsuMod').val(),
+            nombreUsu: $('#nombreUsuMod').val(),
+            fotoUsu: $('#fotoNewUsuMod').val(),
+            tipoUsuario: $('#RolUsuMod').val()
+        }
+        let datosEnvio = JSON.stringify(datos)
+        console.log(datosEnvio)
+        $.ajax({
+            url: "http://localhost:8080/usuario/actualizar",
+            type: "PUT",
+            data: datosEnvio,
+            contentType: "application/JSON",
+            datatype: "JSON",
+            success:function actualizar_usuario(respuesta){
+                if (respuesta == "{'respuesta' : 'Se realizo actualizacion del usuario'}"){
+                    Swal.fire({
+                        title: 'Actualizada!',
+                        text: 'Se actualizo el suaurio ⭐',
+                        icon: 'success',
+                        confirmButtonText: 'Ok!'
+                    })
+                } else {
+                    Swal.fire({
+                        title: 'Oh oh!',
+                        text: 'Hubo un error al actualizar 😥',
+                        icon: 'error',
+                        confirmButtonText: 'Vale!'
+                    })
+                }
+            }
+        });
+    });
+
+    //Eliminar Favorito
+    $('#borra_mi_favorito_0').on('click', function(){
+        let StringUsu = localStorage.getItem("UsuCorreo")
+        alert(StringUsu)
+        let datos = {
+            correoUsu: StringUsu,
             idRut: $('#eliFavorito').val()
         }
         let datosEnvio = JSON.stringify(datos)
@@ -408,21 +524,11 @@ $(document).ready(function(){
             data: datosEnvio,
             contentType: "application/JSON",
             datatype: "JSON",
-            success: function eliminar_fav(respuesta) {
+            success: function(respuesta) {
                 if (respuesta == "{'respuesta': 'Eliminada de favoritos'}"){
-                    Swal.fire({
-                        title: 'Eliminada!',
-                        text: 'Se elimino la ruta favorita 🥰',
-                        icon: 'success',
-                        confirmButtonText: 'Ok!'
-                    })
+                    alert("BORRADO")
                 } else {
-                    Swal.fire({
-                        title: 'Error!',
-                        text: 'No se logro eliminar tu favorito 💢',
-                        icon: 'error',
-                        confirmButtonText: 'Ok!'
-                    })
+                    alert("NOOO")
                 }
             }
         })

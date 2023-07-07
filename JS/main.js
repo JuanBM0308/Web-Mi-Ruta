@@ -58,7 +58,7 @@ function cerrar_sesion() {
         buttonsStyling: false
     })
 
-    localStorage.setItem("UsuCorreo", "Cierre##@##gmail.com"); //Modificar variable para cierre
+    localStorage.clear(); //Modificar variable para cierre
 
     //Redirección a index.html
     setTimeout( function() { window.location = "index.html"; }, 2000 );

@@ -5,9 +5,8 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" href="images/BusFinal.png" type="image/x-icon">
-
         <!-- LINK CSS -->
-        <link rel="stylesheet" href="CSS/ingresar.css">
+        <link rel="stylesheet" href="CSS/formulario.css">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
         <!-- FIN LINK CSS -->
 
@@ -15,17 +14,11 @@
         <script src="sweetalert2.min.js"></script>
         <link rel="stylesheet" href="sweetalert2.min.css">
         <!-- FIN ALERLAS CSS -->
-        
-        <!--CSS JS Mapa-->
-        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
-        <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
-        <!--FIN CSS JS Mapa-->
 
         <!--AJAX-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <!--FIN AJAX-->
-
-        <title>Mi Ruta | Registro</title>
+        <title>Actualizar | Ruta</title>
     </head>
 <body>
     
@@ -36,60 +29,56 @@
   
           <!--Titulo Web-->
           <a class="navbar-brand" href="index.html">Mi Ruta</a>
-  
-          <!--Links Navegacion-->
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <div>
-                <ul class="navbar-nav">  
-                    <li class="nav-item">
-                      <a class="nav-link" href="rutas.html">Rutas</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="paradas.html">Paradas</a>
-                    </li>
-                  </ul>
-            </div>
-          </div>        
+         
         </div>
       </nav>
 
-      <!--Formulario Registro-->
+      <!--Formulario Actualizar-->
 
       <div class="formularios_ing_regi">
 
-        <h2 class="Titulo">Registro Usuario</h2>
+        <img src="images/actualizar.png" class="agregar" alt="imgAgregar">
 
-        <img src="images/Firmas (1).png" class="logo" alt="" srcset="">
+        <div class="datos">
 
-          <div class="datos">
           <div class="contenido">
-            <label for="Nombre_Completo">Nombre Completo</label>
-            <input type="text" placeholder="Digite su nombre completo" required id="nombre_completo_usu">
+            <label for="dato1">Id Ruta</label>
+            <input id="idRutMod" type="number" placeholder="Id a buscar para modificar" required>
           </div>
 
           <div class="contenido">
-            <label for="Correo">Correo</label>
-            <input type="email" placeholder="Digite su correo" required id="correo_usu">
+            <label for="dato1">Lugar Inicio</label>
+            <input id="LugarInicioMod" type="text" placeholder="Lugar de inicio de la ruta" required>
           </div>
 
           <div class="contenido">
-            <label for="Contraseña">Contraseña</label>
-            <input type="password" placeholder="Digite su contraseña" required id="contraseña_usu">
+            <label for="dato1">Lugar Final</label>
+            <input id="LugarFinalMod" type="text" placeholder="Lugar de final de la ruta" required>
           </div>
 
           <div class="contenido">
-            <label for="Contraseña">Foto</label>
-            <input type="text" placeholder="Imagen en formato link" required id="foto_usuario_regi">
+            <label for="dato1">Hora Inicio</label>
+            <label style="font-size: 12px;" for="dato1">Formato 12h</label>
+            <input id="HIMod" type="text" placeholder="Ej: 00:00:00" required>
           </div>
+
+          <div class="contenido">
+            <label for="dato1">Hora Final</label>
+            <label style="font-size: 12px;" for="dato1">Formato 12h</label>
+            <input id="HFMod" type="text" placeholder="Ej: 00:00:00" required>
+          </div>
+
+          <div class="contenido">
+            <label for="dato1">Dias Disponibles</label>
+            <input id="diasDisponiblesMod" type="text" placeholder="Ej: L/M/X/J/V" required>
+          </div>
+
         </div>
 
         <div class="Cajaboton">
-            <button type="button" class="boton1" value="" name="registrar" id="boton_registrar" onclick="agregar_usu_individual()">Registrar</button>
+            <button type="button" class="boton1" value="modificarRuta" name="modificarRuta" id="actualizarRuta" onclick="actualizar_ruta()">Actualizar</button>
         </div>
 
-        <div class="Cajaboton">
-            <button type="button" class="boton2" value="" name="registro_google" id="boton_regis_google"> <a><img src="images/search.png" class="icono" alt="" srcset=""></a> Registro con Google</button>
-        </div>
       </div>
 
     <!-- LINK JS -->

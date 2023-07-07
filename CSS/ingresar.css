@@ -46,7 +46,7 @@ label {
 }
 
 input {
-    width: auto;
+    width: 15em;
     height: 35px;
     border-radius: 5px;
     margin-left: 1em;

@@ -9,7 +9,7 @@ $(document).ready(function(){
             //console.log(respuesta+"  ESTO ES RTA")
             for (i = 0; i <= respuesta.length; i++){
                 if(respuesta == ''){
-                    contenedorCardsFavoritos.innerHTML += '<h4 class="position-absolute top-50 start-50 translate-middle">Usted no tiene favoritos por el momento 😯</h4>'
+                    contenedorCardsFavoritos.innerHTML += '<h4 class="position-absolute top-50 start-50 translate-middle">Usted no tiene favoritos por el momento 💕</h4>'
                 } else {
                     contenedorCardsFavoritos.innerHTML += `
   <div class="m-4">

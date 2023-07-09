@@ -43,8 +43,7 @@ document.getElementById('lugar_inicio').addEventListener('change',function(e){
     });
 });
 
-// PARTE LOGICA HTML
-
+//// PARTE LOGICA HTML
 //Cerrar Sesion
 function cerrar_sesion() {
     Swal.fire({
@@ -106,5 +105,5 @@ function eliminarFavorito(index) {
         console.log('Error al realizar la solicitud AJAX');
       }
     });
-  }
+}
   

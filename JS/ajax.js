@@ -281,8 +281,8 @@ $(document).ready(function(){
             contentType: "application/JSON",
             datatype: "JSON",
             success:function ingresar(respuesta){
-                //let coco = JSON.stringify(respuesta)
-                //console.log(coco)
+                let coco = JSON.stringify(respuesta)
+                console.log(coco)
                 if (respuesta == "{\n\"acceso\": false\n}"){
                     Swal.fire({
                         title: 'Denegado!',
@@ -291,7 +291,7 @@ $(document).ready(function(){
                         confirmButtonText: 'Ok!'
                     })
                 } else {
-                    if (respuesta == "{\n\"acceso\": true,\n\"idUsu\": 1234567894\n}"){
+                    if (respuesta == "{\n\"acceso\": true,\n\"idUsu\": 1\n}" || respuesta == "{\n\"acceso\": true,\n\"idUsu\": 2\n}" || respuesta == "{\n\"acceso\": true,\n\"idUsu\": 3\n}"){
                         let correoValLocal = $('#correo_ing').val()
                         localStorage.setItem("UsuCorreo", correoValLocal); //Esto guarda la variable de sesion
 
@@ -519,32 +519,6 @@ $(document).ready(function(){
                 }
             }
         });
-    });
-
-    //Eliminar Favorito
-    $('#borra_mi_favorito_0').on('click', function(){
-        let StringUsu = localStorage.getItem("UsuCorreo")
-        alert(StringUsu)
-        let datos = {
-            correoUsu: StringUsu,
-            idRut: $('#eliFavorito').val()
-        }
-        let datosEnvio = JSON.stringify(datos)
-        console.log(datosEnvio)
-        $.ajax({
-            url: "http://localhost:8080/ruta/eliminarFav",
-            type: "POST",
-            data: datosEnvio,
-            contentType: "application/JSON",
-            datatype: "JSON",
-            success: function(respuesta) {
-                if (respuesta == "{'respuesta': 'Eliminada de favoritos'}"){
-                    alert("BORRADO")
-                } else {
-                    alert("NOOO")
-                }
-            }
-        })
     });
 
 });

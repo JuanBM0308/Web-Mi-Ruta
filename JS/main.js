@@ -63,3 +63,48 @@ function cerrar_sesion() {
     //Redirección a index.html
     setTimeout( function() { window.location = "index.html"; }, 2000 );
 }
+
+//Eliminar Fav
+function eliminarFavorito(index) {
+    //alert(index)
+    const usuarioHasRutaModelo = {
+      correoUsu: localStorage.getItem("UsuCorreo"), // Reemplaza con el correo del usuario
+      idRut: index, // Reemplaza con el ID de la ruta correspondiente
+    };
+  
+    // Realizar la solicitud AJAX
+    $.ajax({
+      type: 'POST',
+      url: 'http://localhost:8080/ruta/eliminarFav',
+      data: JSON.stringify(usuarioHasRutaModelo),
+      contentType: 'application/json',
+      success: function (response) {
+        //console.log(response)
+        if (response == "{'respuesta': 'Eliminada de favoritos'}") {
+            // La ruta favorita se eliminó correctamente
+            // Realiza las acciones necesarias, como actualizar la interfaz de usuario
+            Swal.fire({
+                title: 'Bye bye!',
+                text: 'Se elimino tu favorito 😏',
+                icon: 'success',
+                confirmButtonText: 'Ok!'
+            })
+            setTimeout( function() { window.location = "favoritos.html"; }, 2000 );
+        } else {
+            // No se pudo eliminar la ruta favorita
+            Swal.fire({
+                title: 'Oh oh!',
+                text: 'Hubo un error al eliminar 😥',
+                icon: 'error',
+                confirmButtonText: 'Vale!'
+            })
+            setTimeout( function() { window.location = "favoritos.html"; }, 2000 );
+        }
+      },
+      error: function () {
+        // Ocurrió un error en la solicitud AJAX
+        console.log('Error al realizar la solicitud AJAX');
+      }
+    });
+  }
+  

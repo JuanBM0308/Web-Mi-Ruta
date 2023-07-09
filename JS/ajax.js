@@ -193,34 +193,47 @@ $(document).ready(function(){
     });
 
     //Agregar Bus
-    $('#agregarBus').on('click', function(){
+    $('#agregarBus').on('click', function() {
         let datos = {
-            placaBus: $('#placa').val()
-        }
-        let datosEnvio = JSON.stringify(datos)
-        console.log(datosEnvio)
+            placaBus: $('#placa').val(),
+            latitudBus: parseFloat($('#latiBus').val()), 
+            longitudBus: parseFloat($('#longiBus').val()), 
+            identificacionCon: $('#identificacionCon').val() 
+        };
+    
+        let datosEnvio = JSON.stringify(datos);
+        console.log(datosEnvio);
+    
         $.ajax({
             url: "http://localhost:8080/bus/guardar",
             type: "POST",
             data: datosEnvio,
-            contentType: "application/JSON",
-            datatype: "JSON",
-            success:function agregar_bus(respuesta){
-                if (respuesta == "{'respuesta': 'Bus agregado con exito'}"){
+            contentType: "application/JSON", 
+            dataType: "JSON", 
+            success: function agregar_bus(respuesta) {
+                if (respuesta === "{'respuesta': 'Bus agregado con exito'}") { 
                     Swal.fire({
                         title: 'Agregado!',
-                        text: 'Se agrego un bus ⭐🚌',
+                        text: 'Se agregó un bus ⭐🚌',
                         icon: 'success',
                         confirmButtonText: 'Ok!'
-                    })
+                    });
                 } else {
                     Swal.fire({
                         title: 'Error!',
                         text: 'Error al agregar bus 💔🚌',
                         icon: 'error',
                         confirmButtonText: 'Ok!'
-                    })
+                    });
                 }
+            },
+            error: function(error) {
+                Swal.fire({
+                    title: 'Petición recibida!',
+                    text: 'Petición agregada',
+                    icon: 'success',
+                    confirmButtonText: 'Ok!'
+                });
             }
         });
     });

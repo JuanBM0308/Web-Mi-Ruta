@@ -88,7 +88,7 @@ function eliminarFavorito(index) {
                 icon: 'success',
                 confirmButtonText: 'Ok!'
             })
-            setTimeout( function() { window.location = "favoritos.html"; }, 2000 );
+            setTimeout( function() { window.location = "favoritos.html"; }, 1500 );
         } else {
             // No se pudo eliminar la ruta favorita
             Swal.fire({
@@ -97,7 +97,47 @@ function eliminarFavorito(index) {
                 icon: 'error',
                 confirmButtonText: 'Vale!'
             })
-            setTimeout( function() { window.location = "favoritos.html"; }, 2000 );
+            setTimeout( function() { window.location = "favoritos.html"; }, 1500 );
+        }
+      },
+      error: function () {
+        // Ocurrió un error en la solicitud AJAX
+        console.log('Error al realizar la solicitud AJAX');
+      }
+    });
+}
+  
+//Agregar Fav
+function agregarFavorito(index) {
+    const usuarioHasRutaModelo = {
+      correoUsu: localStorage.getItem("UsuCorreo"), 
+      idRut: index, 
+    };
+  
+    // Realizar la solicitud AJAX
+    $.ajax({
+      type: 'POST',
+      url: 'http://localhost:8080/ruta/agregarFav',
+      data: JSON.stringify(usuarioHasRutaModelo),
+      contentType: 'application/json',
+      success: function (response) {
+        if (response == "{'respuesta': 'Agregada a favoritos'}") {
+            // La ruta se agregó como favorita correctamente
+            // Realiza las acciones necesarias, como actualizar la interfaz de usuario
+            Swal.fire({
+            title: 'Añadido!',
+            text: 'Se agrego tu favorito 💖',
+            icon: 'success',
+            confirmButtonText: 'Super!'
+            })
+        } else {
+            // No se pudo agregar la ruta como favorita
+            Swal.fire({
+                title: 'Oh oh!',
+                text: 'Hubo un error al agrgar tu favorito 💔',
+                icon: 'error',
+                confirmButtonText: 'Vale!'
+            })
         }
       },
       error: function () {

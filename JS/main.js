@@ -18,7 +18,7 @@ var mosquera = L.marker([4.70612, -74.2307],
 {alt: 'Mosquera'}).addTo(map)
 .bindPopup('Esto es Mosquera - Cundinamarca!');
 
-var marker = L.marker([4.70612, -74.2307],{ icon: busIcon }).addTo(map);
+var marker = L.marker([4.70612, -74.2307],{ icon: busIcon,  }).addTo(map);
 
 var coordinates = [
   [4.709189281272594, -74.22617911556067],

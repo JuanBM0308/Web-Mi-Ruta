@@ -134,7 +134,7 @@ function agregarFavorito(index) {
             // No se pudo agregar la ruta como favorita
             Swal.fire({
                 title: 'Oh oh!',
-                text: 'Hubo un error al agrgar tu favorito 💔',
+                text: 'Hubo un error al agregar tu favorito 💔',
                 icon: 'error',
                 confirmButtonText: 'Vale!'
             })

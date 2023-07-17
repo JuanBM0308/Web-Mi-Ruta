@@ -468,6 +468,8 @@ $(document).ready(function(){
                                     confirmButtonText: 'Wow!'
                                 })
                             }
+
+                            setTimeout( function() { window.location = "index.html"; }, 1500 );
                         }
                     });                   
                 } else {

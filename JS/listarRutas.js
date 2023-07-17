@@ -30,6 +30,9 @@ $(document).ready(function(){
                             <a style="color: #ff9933;" href="#diasDispo${i}" class="nav-link" data-bs-toggle="tab">Días Disponibles</a>
                           </li>
                           <li class="nav-item">
+                            <a style="color: #ff9933;" href="#paradasDeRuta${i}" class="nav-link" data-bs-toggle="tab">Paradas De La Ruta</a>
+                          </li>
+                          <li class="nav-item">
                             <a style="color: #00cc00;" href="#agregarFavorito${i}" class="nav-link" data-bs-toggle="tab">Agregar Favorito</a>
                           </li>
                         </ul>
@@ -55,6 +58,17 @@ $(document).ready(function(){
                           <div class="tab-pane fade" id="diasDispo${i}">
                             <h5 class="card-title">${respuesta[i].diasDisponiblesRut}</h5>
                             <img style="width: 50px;" src="images/calendario.png" alt="fotoCalendario">
+                          </div>
+                          <div class="tab-pane fade" id="paradasDeRuta${i}">
+                            <h5 class="card-title">Estas son sus paradas:</h5>
+                            <div id="paraDeRuta">
+                              <div style="height: 1px; background-color: #969696; margin: 10px;"></div>
+                              <div class="input-group rounded">
+                                <select id="listaParadasRuta"  class="form-select" aria-label="Default select example" style="margin-bottom: 2em;" onchange="ver_parada_mapa()">
+                                  <option disabled selected>Click Me!</option>
+                                </select>
+                              </div>
+                            </div>
                           </div>
                           <div class="tab-pane fade" id="agregarFavorito${i}">
                             <h5 class="card-title">Agregar Favorito</h5>
